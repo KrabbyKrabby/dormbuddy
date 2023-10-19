@@ -1,8 +1,15 @@
-
+import React from 'react';
+import Navbar from './components/Navbar';
+import Footer from './components/Footer';
+import './index.css';
 
 function App() {
   return (
-    <div>Dormbuddy</div>
+    <main className="main">
+      <Navbar />
+      <div>Dormbuddy</div>
+      <Footer />
+    </main>
   );
 }
 
