@@ -28,7 +28,7 @@ export default function(){
                         <img src={KitchenLogo} alt="Kitchen Logo" className="kitchenLogo"></img>
                         <h1 className='kitchenAvailable'>Available</h1>
                         <img src={ToiletLogo} alt="Toilet Logo" className="toiletLogo"></img>
-                        <h1 className='toiletAvailable'>Not Available</h1>
+                        <h1 className='toiletAvailable'>Attached</h1>
                     </div>
                 </div>
             </div>
