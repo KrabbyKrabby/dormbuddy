@@ -1,0 +1,109 @@
+h1{
+    margin: 0px;
+  }
+
+    .dormCard{
+        width: 40%;
+        height: 400px;
+        display: flex;
+        flex-direction: column;
+        margin: 2%;
+        border-radius: 5px;
+        background: rgba(0, 0, 0, 0.19);
+    }
+
+    .dormTitle{
+        color: #17514D;
+        font-size: 30px;
+        font-weight: 700;
+        margin-left: 5%;
+        margin-top: 4%;
+    }
+
+    .innerCard{
+        width: 90%;
+        height: 70%;
+        margin-top: 10px;
+        margin-bottom: 50px;
+        align-self: center;
+        display: flex;
+        flex-direction: row;
+    }
+
+    .dormImage{
+        width: 40%;
+        height: 100%;
+        border-radius: 5px;
+    }
+
+    .dormInfo{
+        width: 60%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .dormCity{
+        display: flex;
+        flex-direction: row;
+        margin-top: 5%;
+    }
+
+    .locationLogo{
+        width: 40px;
+        height: 40px;
+    }
+
+    .dormCityName{
+        color: #000;
+        font-size: 30px;
+        align-self :center;
+    }
+
+    .dormRent{
+        color: #17514D;
+        font-size: 40px;
+        margin-top: 7%;
+        margin-left: 10px;
+    }
+
+    .dormAddress{
+        color: #000;
+        font-size: 20px;
+        margin-top: 5px;
+        margin-left: 5px;
+        width: 90%;
+    }
+
+    .dormAmenities{
+        display: flex;
+        flex-direction: row;
+        margin-top: 23%;
+        align-items: center;
+    }
+
+    .windowLogo{
+        width: 25px;
+        height: 25px;
+        
+    }
+
+    .kitchenLogo{
+        width: 25px;
+        height: 25px;
+        margin-left: 3%;
+    }
+
+    .toiletLogo{
+        width: 25px;
+        height: 25px;
+        margin-left: 3%;
+    }
+
+    .dormAmenities > h1{
+        font-size: 15px;
+    }
+
+
+
+

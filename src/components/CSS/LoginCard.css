@@ -7,7 +7,8 @@ h1{
     height: 700px;
     display: flex;
     flex-direction: column;
-    margin-left: 700px;
+    margin-left: auto;
+    margin-right: auto;
     margin-top: 50px;
   }
 
