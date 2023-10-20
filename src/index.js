@@ -7,6 +7,6 @@ import SignupPage from './pages/SignupPage'
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-    <SignupPage />
+    <App />
 );
 

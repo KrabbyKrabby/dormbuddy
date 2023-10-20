@@ -3,8 +3,8 @@ h1{
   }
 
     .dormCard{
-        width: 40%;
-        height: 400px;
+        width: 30%;
+        height: 300px;
         display: flex;
         flex-direction: column;
         margin: 2%;
@@ -22,16 +22,15 @@ h1{
 
     .innerCard{
         width: 90%;
-        height: 70%;
-        margin-top: 10px;
-        margin-bottom: 50px;
+        height: 65%;
+        margin-top: 3%;
         align-self: center;
         display: flex;
         flex-direction: row;
     }
 
     .dormImage{
-        width: 40%;
+        width: 50%;
         height: 100%;
         border-radius: 5px;
     }
@@ -46,39 +45,39 @@ h1{
     .dormCity{
         display: flex;
         flex-direction: row;
-        margin-top: 5%;
     }
 
     .locationLogo{
-        width: 40px;
-        height: 40px;
+        width: 20px;
+        height: 20px;
     }
 
     .dormCityName{
         color: #000;
-        font-size: 30px;
+        font-size: 20px;
         align-self :center;
     }
 
     .dormRent{
         color: #17514D;
         font-size: 40px;
-        margin-top: 7%;
-        margin-left: 10px;
+        margin-top: 3%;
+        margin-left: 3%;
     }
 
     .dormAddress{
         color: #000;
         font-size: 20px;
-        margin-top: 5px;
-        margin-left: 5px;
-        width: 90%;
+        margin-top: 2%;
+        margin-left: 2%;
+        width: 80%;
+        height: 15%;
     }
 
     .dormAmenities{
         display: flex;
         flex-direction: row;
-        margin-top: 23%;
+        margin-top:4%;
         align-items: center;
     }
 
@@ -100,9 +99,27 @@ h1{
         margin-left: 3%;
     }
 
-    .dormAmenities > h1{
-        font-size: 15px;
+    .sizeLogo{
+        width: 25px;
+        height: 25px;
     }
+
+    .dormAmenities > h1{
+        font-size: 12px;
+    }
+
+    .squarefeet{
+        font-size: 20px;
+        margin-left: 2%;
+    }
+
+    .size{
+        display: flex;
+        flex-direction: row;
+        margin-top: 10%;
+    }
+
+
 
 
 

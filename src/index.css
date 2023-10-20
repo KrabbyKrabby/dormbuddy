@@ -12,3 +12,9 @@ body{
   margin: 0px;
   background: #F0DEDE;
 }
+
+.temp{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}

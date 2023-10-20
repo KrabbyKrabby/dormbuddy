@@ -9,7 +9,7 @@ function App() {
   return (
     <main className="main">
       <Navbar />
-      <DormCard />
+      
       <Footer />
     </main>
   );
