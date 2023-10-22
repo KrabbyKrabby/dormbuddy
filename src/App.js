@@ -4,19 +4,14 @@ import Footer from './components/Footer';
 import LoginCard from './components/LoginCard';
 import DormCard from './components/DormCard';
 import SearchBar from './components/SearchBar';
+import ImageViewer from './components/ImageViewer';
 import './index.css';
 
 function App() {
   return (
     <main className="main">
       <Navbar />
-      <SearchBar />
-      <div className='temp'>
-        <DormCard/>
-        <DormCard/>
-        <DormCard/>
-        <DormCard/>
-      </div>
+      <ImageViewer />
       <Footer />
     </main>
   );
