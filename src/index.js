@@ -6,9 +6,10 @@ import LoginPage from './pages/LoginPage'
 import SignupPage from './pages/SignupPage'
 import SearchPage from './pages/SearchPage'
 import Homepage from './pages/Homepage';
+import DormPage from './pages/DormPage';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-    <App />
+    <DormPage/>
 );
 

@@ -86,7 +86,7 @@ h1{
     margin-top: 1%;
   }
 
-  label{
+  .radioButtonContainer >label{
     color: #D9D9D9;
     align-self: center;
     margin-left: 2%;
