@@ -10,6 +10,6 @@ import DormPage from './pages/DormPage';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-    <Homepage/>
+    <SearchPage/>
 );
 
