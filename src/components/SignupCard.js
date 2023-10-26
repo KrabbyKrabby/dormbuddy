@@ -16,8 +16,6 @@ export default function SignupCard() {
         })
     }
 
-    const obj = { spotName: "death", openingDate: "2021-01-01", closingDate: "2021-12-31", description: "yo", location: "death" }
-
     function handleSubmit(){
         console.log(formData)
     }
