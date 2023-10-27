@@ -19,23 +19,33 @@ export default function DormPage() {
             <div className='dorm-page'>
                 <div className='dorm-page-left'>
                     <div className='dorm-page-upper'>
-                        <h1 className='dormpage-title'>Newly Built 4 bedroom apartment</h1>
-                        <div className='dormpage-maps-rent'>
-                            <h1 className='google-maps-link'>See Location</h1>
+                        <div className='dormpage-title-rent'>
+                            <h1 className='dormpage-title'>Newly Built 4 bedroom apartment</h1>
                             <h1 className='dormpage-rent'>৳5000</h1>
+                        </div>
+                        <div className='dormpage-address-link'>
+                            <h1 className='dormpage-address'>House no : 5 <br/> Nazimudding Road <br/> Dhaka </h1>
+                            <h1 className='google-maps-link'>See Location</h1>
                         </div>
                     </div>
                     <ImageViewer />
 
                     <div className="dormpage-dormAmenities">
-                        <img src={WindowLogo} alt="Window Logo" className="windowLogo"></img>
-                        <h1 className='windowNo'>4</h1>
-                        <img src={KitchenLogo} alt="Kitchen Logo" className="kitchenLogo"></img>
-                        <h1 className='kitchenAvailable'>Available</h1>
-                        <img src={ToiletLogo} alt="Toilet Logo" className="toiletLogo"></img>
-                        <h1 className='toiletAvailable'>Attached</h1>
-                        <img src={SizeLogo} alt="Size Logo" className="sizeLogo"></img>
-                        <h1 className='dorm-size'>100 Sq Ft</h1>
+                        <div className='dormpage-amenities-top'>
+                            <img src={WindowLogo} alt="Window Logo" className="windowLogo"></img>
+                            <h1 className='windowNo'>4</h1>
+                            <img src={KitchenLogo} alt="Kitchen Logo" className="kitchenLogo"></img>
+                            <h1 className='kitchenAvailable'>Available</h1>
+                            <img src={ToiletLogo} alt="Toilet Logo" className="toiletLogo"></img>
+                            <h1 className='toiletAvailable'>Attached</h1>
+                            <img src={SizeLogo} alt="Size Logo" className="sizeLogo"></img>
+                            <h1 className='dorm-size'>100 Sq Ft</h1>
+                        </div>
+                        <div className='dormpage-amenities-bottom'>
+                            <h1 className='vacancy'>Vacancy : 1/2</h1>
+                            <h1>Gender : male</h1>
+                        </div>
+                        
                     </div>
 
                     <div className='dormpage-dormDescription'>
