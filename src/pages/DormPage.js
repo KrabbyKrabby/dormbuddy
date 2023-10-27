@@ -15,7 +15,6 @@ export default function DormPage() {
     return (
         <main className="main">
             <Navbar />
-            <SearchBar />
             
             <div className='dorm-page'>
                 <div className='dorm-page-left'>

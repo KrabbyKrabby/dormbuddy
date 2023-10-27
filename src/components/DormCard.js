@@ -5,7 +5,7 @@ import ToiletLogo from '../images/toilet.png'
 import SizeLogo from '../images/maximize.png'
 import './CSS/DormCard.css'
 
-export default function(){
+export default function(props){
     return(
         <div className="dormCard">
             <h1 className="dormTitle">Newly built 4 Bedroom Apartment</h1>

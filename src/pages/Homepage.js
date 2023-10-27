@@ -1,3 +1,4 @@
+import {useNavigate} from 'react-router-dom';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import DormCard from '../components/DormCard';
@@ -6,6 +7,8 @@ import HomepageImage from '../images/HomepageImage.png'
 import BlackSearchBox from '../components/BlackSearchBox';
 
 export default function Homepage() {
+
+
     return (
         <main className="mainHomepage">
             <Navbar />
