@@ -5,18 +5,26 @@ import DormCard from '../components/DormCard';
 import './CSS/Homepage.css';
 import HomepageImage from '../images/HomepageImage.png'
 import BlackSearchBox from '../components/BlackSearchBox';
+import DormData from '../DormData';
 
-export default function Homepage() {
+export default function Homepage(props) {
 
+    const Cards = DormData.map((dorm) => {
+        return (
+            <DormCard 
+                item = {dorm}
+            />
+        );
+    });
 
     return (
         <main className="mainHomepage">
-            <Navbar />
+            <Navbar {...props}/>
             <div className='homepageContainer'>
 
                 <div className='homepageImageContainer'>
 
-                    <BlackSearchBox />
+                    <BlackSearchBox {...props}/>
                     <img src = {HomepageImage} alt = 'HomepageImage' className='homepageImage'/>
                     
                 </div>
@@ -24,10 +32,7 @@ export default function Homepage() {
                 <h1 className='featured'>Featured Apartments</h1>
 
                 <div className='cardContainer'>
-                    <DormCard />
-                    <DormCard />
-                    <DormCard />
-                    <DormCard />
+                    {Cards}
                 </div>
 
             </div>

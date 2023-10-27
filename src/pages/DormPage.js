@@ -11,48 +11,52 @@ import KitchenLogo from '../images/kitchen.png'
 import ToiletLogo from '../images/toilet.png'
 import SizeLogo from '../images/maximize.png'
 
-export default function DormPage() {
+export default function DormPage(props) {
     return (
         <main className="main">
-            <Navbar />
+            <Navbar {...props}/>
             
             <div className='dorm-page'>
                 <div className='dorm-page-left'>
                     <div className='dorm-page-upper'>
                         <div className='dormpage-title-rent'>
-                            <h1 className='dormpage-title'>Newly Built 4 bedroom apartment</h1>
-                            <h1 className='dormpage-rent'>৳5000</h1>
+                            <h1 className='dormpage-title'>{props.currentDorm.title}</h1>
+                            <h1 className='dormpage-rent'>{"৳" + props.currentDorm.rent}</h1>
                         </div>
                         <div className='dormpage-address-link'>
-                            <h1 className='dormpage-address'>House no : 5 <br/> Nazimudding Road <br/> Dhaka </h1>
-                            <h1 className='google-maps-link'>See Location</h1>
+                            <div className='dormpage-address'>
+                                <h1>{"House no: " + props.currentDorm.address.house}</h1>
+                                <h1>{props.currentDorm.address.street}</h1>
+                                <h1>{props.currentDorm.address.city}</h1>
+                            </div>
+                            <h1 className='google-maps-link'>{props.currentDorm.mapLink}</h1>
                         </div>
                     </div>
-                    <ImageViewer />
+                    <ImageViewer {...props}/>
 
                     <div className="dormpage-dormAmenities">
                         <div className='dormpage-amenities-top'>
                             <img src={WindowLogo} alt="Window Logo" className="windowLogo"></img>
-                            <h1 className='windowNo'>4</h1>
+                            <h1 className='windowNo'>{props.currentDorm.windowCount}</h1>
                             <img src={KitchenLogo} alt="Kitchen Logo" className="kitchenLogo"></img>
-                            <h1 className='kitchenAvailable'>Available</h1>
+                            <h1 className='kitchenAvailable'>{props.currentDorm.isKitchenAvailable ? "Available" : "Not Available"}</h1>
                             <img src={ToiletLogo} alt="Toilet Logo" className="toiletLogo"></img>
-                            <h1 className='toiletAvailable'>Attached</h1>
+                            <h1 className='toiletAvailable'>{props.currentDorm.isToiletAttached ? "Attached" : "Not Attached"}</h1>
                             <img src={SizeLogo} alt="Size Logo" className="sizeLogo"></img>
-                            <h1 className='dorm-size'>100 Sq Ft</h1>
+                            <h1 className='dorm-size'>{(props.currentDorm.dimensions.height*props.currentDorm.dimensions.width) + " Sq Ft"}</h1>
                         </div>
                         <div className='dormpage-amenities-bottom'>
-                            <h1 className='vacancy'>Vacancy : 1/2</h1>
-                            <h1>Gender : male</h1>
+                            <h1 className='vacancy'>{"Vacancy : " + props.currentDorm.vacancy + "/" + props.currentDorm.capacity}</h1>
+                            <h1>{"Gender : " + props.currentDorm.prefGender}</h1>
                         </div>
                         
                     </div>
 
                     <div className='dormpage-dormDescription'>
                         <h1 className='key-features'>Key Features</h1>
-                        <h1 className='key-feature-info'>Good place</h1>
+                        <h1 className='key-feature-info'>{props.currentDorm.keyFeatures}</h1>
                         <h1 className='full-description'>Full Description</h1>
-                        <h1 className='full-description-info'>IDK Dorm Good</h1>
+                        <h1 className='full-description-info'>{props.currentDorm.description}</h1>
                     </div>
 
                 </div>

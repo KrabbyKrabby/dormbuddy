@@ -1,6 +1,9 @@
 import React from "react";
 import './CSS/LoginCard.css';
-export default function LoginCard(){
+import {useNavigate} from 'react-router-dom';
+export default function LoginCard(props){
+
+    const navigate = useNavigate()
 
     const [formData, setFormData] = React.useState({ email: "", password: "" })
 
@@ -15,7 +18,8 @@ export default function LoginCard(){
     }
 
     function handleSubmit(){
-        console.log(formData)
+        props.Login(formData.email)
+        navigate('/')
     }
 
     return(
@@ -25,12 +29,12 @@ export default function LoginCard(){
                 <input type="text" placeholder="Email" className="emailInput" onChange={handleChange} name="email" value={formData.email}></input>
                 <input type="text" placeholder="Password" className="passwordInput" onChange={handleChange} name="password" value={formData.password}></input>
                 <button className="forgotPassword">Forgot Password?</button>
-                <button className="loginButton">Login</button>
+                <button className="loginButton" onClick={handleSubmit}>Login</button>
             </form>
                 
             <div className="lowerCard">
                 <h1 className="notYetRegistered">Not yet registered?</h1>
-                <button className="register">Register</button>
+                <button className="register" onClick={ () => navigate('/signup')}>Register</button>
             </div>
         </div>
     );

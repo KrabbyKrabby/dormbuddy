@@ -1,10 +1,12 @@
 import React from "react";
 import "./CSS/SearchBar.css";
+import {useNavigate} from 'react-router-dom';
+export default function(props){
 
-export default function(){
+    const navigate = useNavigate()
 
 
-    const [formData, setFormData] = React.useState({ location: "", rent: "", size: "", toilet: true, kitchen: true })
+    const [formData, setFormData] = React.useState(props.navbarInfo)
 
     function handleChange(e) {
         const { name, value, type, checked } = e.target
@@ -17,6 +19,8 @@ export default function(){
     }
     function handleSubmit(){
         console.log(formData)
+        props.Search(formData)
+        navigate('/dorm')
     }
 
 
@@ -32,7 +36,7 @@ export default function(){
             <input type = "checkbox" className="kitchen" id = "kitchen" name = "kitchen" onChange = {handleChange} checked = {formData.kitchen}  />
             <label htmlFor="kitchen">Kitchen?</label>
 
-            <button className="filterButton">Filter</button>
+            <button className="filterButton" onClick={ handleSubmit }>Filter</button>
         </form>
     );
 }

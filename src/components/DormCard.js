@@ -4,10 +4,20 @@ import LocationLogo from '../images/Location.png'
 import ToiletLogo from '../images/toilet.png'
 import SizeLogo from '../images/maximize.png'
 import './CSS/DormCard.css'
+import {useNavigate} from 'react-router-dom';
+
 
 export default function(props){
+
+    const navigate = useNavigate()
+
+    function handleClick(){
+        props.SelectDorm(props.item)
+        navigate('/dorm')
+    }
+
     return(
-        <div className="dormCard">
+        <div className="dormCard" onClick={ handleClick }>
             <h1 className="dormTitle">{props.item.title}</h1>
             <div className="innerCard">
                 <img className='dormImage' src={props.item.images.imagePath1}></img>
@@ -20,7 +30,7 @@ export default function(props){
                     <h1 className="dormAddress">{props.item.address.street}</h1>
                     <div className='size'>
                         <img src={SizeLogo} alt="sizeLogo" className="sizeLogo"></img>
-                        <h1 className='squarefeet'>{(props.item.dimensions.height*props.item.dimensions.width) + "Sq Ft"}</h1>
+                        <h1 className='squarefeet'>{(props.item.dimensions.height*props.item.dimensions.width) + " Sq Ft"}</h1>
                     </div>
                     <div className="dormAmenities">
                         <img src={WindowLogo} alt="Window Logo" className="windowLogo"></img>

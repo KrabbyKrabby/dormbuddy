@@ -94,7 +94,7 @@ html{
     display: flex;
     flex-direction: column;
     width: 75%;
-    height: 150px;
+    height: 160px;
     background: rgba(0, 0, 0, 0.24);
     margin-bottom: 3%;
   }
@@ -109,7 +109,6 @@ html{
     display: flex;
     flex-direction: row;
     margin-top: auto;
-    margin-bottom: 1%;
     margin-left: 2%;
   }
 
@@ -122,6 +121,7 @@ html{
     align-self: last baseline;
     margin-left: auto;
     margin-right: 1%;
+    margin-bottom: 1%;
   }
 
   .dormpage-rent{
@@ -227,5 +227,18 @@ html{
 
   .vacancy{
     margin-right: 3%;
+  }
+
+  .dormpage-address{
+    display: flex;
+    flex-direction: column;
+  }
+
+  .dormpage-address > h1{
+    font-size: 25px;
+  }
+
+  .dormpage-address{
+    margin-bottom: 1%;
   }
 

@@ -6,7 +6,7 @@ import DummyImage3 from '../images/image3.jpg'
 import LeftArrow from '../images/BackArrow.png'
 import RightArrow from '../images/RightArrow.png'
 
-export default function ImageViewer() {
+export default function ImageViewer(props) {
 
     const [selectedImage, setSelectedImage] = React.useState(1)
 
@@ -36,9 +36,9 @@ export default function ImageViewer() {
                 <img src = {RightArrow} alt = 'DummyImage' className='rightArrowImage' onClick={handleRightArrowClick}/>
             </div>
             <div className='lowerImageContainer'>
-                <img src = {DummyImage1} alt = 'DummyImage' className='lowerImage1' style={ selectedImage === 1 ? {'border':'solid'} : {} }/>
-                <img src = {DummyImage2} alt = 'DummyImage' className='lowerImage2' style={ selectedImage === 2 ? {'border':'solid'} : {} }/>
-                <img src = {DummyImage3} alt = 'DummyImage' className='lowerImage3' style={ selectedImage === 3 ? {'border':'solid'} : {} }/>
+                <img src = {props.currentDorm.images.imagePath1} alt = 'DummyImage' className='lowerImage1' style={ selectedImage === 1 ? {'border':'solid'} : {} }/>
+                <img src = {props.currentDorm.images.imagePath2} alt = 'DummyImage' className='lowerImage2' style={ selectedImage === 2 ? {'border':'solid'} : {} }/>
+                <img src = {props.currentDorm.images.imagePath3} alt = 'DummyImage' className='lowerImage3' style={ selectedImage === 3 ? {'border':'solid'} : {} }/>
             </div>
         </div>
     );

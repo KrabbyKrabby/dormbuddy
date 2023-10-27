@@ -1,6 +1,9 @@
 import './CSS/BlackSearchBox.css'
 import React from 'react';
-export default function BlackSearchBox() {
+import {useNavigate} from 'react-router-dom';
+export default function BlackSearchBox(props) {
+
+    const navigate = useNavigate()
 
     const [formData, setFormData] = React.useState({ location: "", rent: "", size: "", toilet: true, kitchen: true })
 
@@ -15,6 +18,8 @@ export default function BlackSearchBox() {
     }
     function handleSubmit(){
         console.log(formData)
+        props.Search(formData)
+        navigate('/search')
     }
 
     return(

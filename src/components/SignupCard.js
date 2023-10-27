@@ -1,7 +1,8 @@
 import './CSS/SignupCard.css';
 import React from 'react';
-
+import {useNavigate} from 'react-router-dom';
 export default function SignupCard() {
+    const navigate = useNavigate()
 
 
     const [formData, setFormData] = React.useState({ firstName: "", lastName: "", email: "", password: "", confirmPassword: "" })
@@ -18,6 +19,7 @@ export default function SignupCard() {
 
     function handleSubmit(){
         console.log(formData)
+        navigate('/login')
     }
 
     return (
@@ -37,7 +39,7 @@ export default function SignupCard() {
 
             <div className="signupLowerCard">
                 <h1 className="signupNotYetRegistered">Already Registered?</h1>
-                <button className="signupLoginButton">Login</button>
+                <button className="signupLoginButton" onClick={ () => navigate('/login') }>Login</button>
             </div>
         </div>
     );

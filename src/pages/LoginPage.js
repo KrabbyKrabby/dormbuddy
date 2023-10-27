@@ -3,11 +3,11 @@ import Footer from '../components/Footer';
 import LoginCard from '../components/LoginCard';
 import './CSS/LoginPage.css';
 
-export default function Homepage() {
+export default function LoginPage(props) {
     return (
         <main className="main">
-            <Navbar />
-            <LoginCard />
+            <Navbar {...props}/>
+            <LoginCard {...props}/>
             <Footer />
         </main>
     );
