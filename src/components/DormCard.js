@@ -3,6 +3,7 @@ import KitchenLogo from '../images/kitchen.png'
 import LocationLogo from '../images/Location.png'
 import ToiletLogo from '../images/toilet.png'
 import SizeLogo from '../images/maximize.png'
+import CrossIcon from '../images/close.png'
 import './CSS/DormCard.css'
 import {useNavigate} from 'react-router-dom';
 
@@ -16,9 +17,17 @@ export default function(props){
         navigate('/dorm')
     }
 
+    function handleCrossClick(){
+        //delete dorm
+    }
+
     return(
         <div className="dormCard" onClick={ handleClick }>
-            <h1 className="dormTitle">{props.item.title}</h1>
+            <div className='title-close'>
+                <h1 className="dormTitle">{props.item.title}</h1>
+                {props.showCross && <img src = {CrossIcon} onClick={ handleCrossClick } alt="Cross Icon" className="crossIcon"></img>} 
+            </div>
+            
             <div className="innerCard">
                 <img className='dormImage' src={props.item.images.imagePath1}></img>
                 <div className="dormInfo">

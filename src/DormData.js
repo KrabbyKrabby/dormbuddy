@@ -1,7 +1,7 @@
 export default [
     {
         postId:1,
-        userEmail:"post1@gmail.com",
+        userEmail:"chowdhuryittehad@gmail.com",
         userContact:"01712345678",
         title : "Dorm 1",
         rent : 1000,
@@ -31,7 +31,7 @@ export default [
     },
     {
         postID : 2,
-        userEmail:"post2@gmail.com",
+        userEmail:"chowdhuryittehad@gmail.com",
         title : "Dorm 2",
         rent : 2000,
         mapLink : "Location 2",
@@ -60,7 +60,7 @@ export default [
     },
     {
         postID : 3,
-        userEmail:"post2@gmail.com",
+        userEmail:"doctorstrange988@gmail.com",
         title : "Dorm 3",
         rent : 3000,
         mapLink : "Location 3",

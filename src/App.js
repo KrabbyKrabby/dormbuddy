@@ -7,6 +7,7 @@ import SignupPage from './pages/SignupPage';
 import SearchPage from './pages/SearchPage';
 import DormPage from './pages/DormPage';
 import ListingPage from './pages/ListingPage';
+import MyDormPage from './pages/MyDormPage';
 
 function App() {
 
@@ -93,37 +94,51 @@ function App() {
         Login = {Login}
         Search = {Search}
         SelectDorm = {SelectDorm}
+        showCross = {false} 
       />}/>
       <Route path="/login" element={<LoginPage
         {...data}
         Login = {Login}
         Search = {Search}
         SelectDorm = {SelectDorm}
+        showCross = {false} 
       />}/>
       <Route path="/signup" element={<SignupPage
         {...data}
         Login = {Login}
         Search = {Search}
         SelectDorm = {SelectDorm}
+        showCross = {false} 
       />}/>
       <Route path="/search" element={<SearchPage
         {...data}
         Login = {Login}
         Search = {Search}
-        SelectDorm = {SelectDorm}  
+        SelectDorm = {SelectDorm} 
+        showCross = {false}   
       />}/>
       <Route path="/dorm" element={<DormPage
         {...data}
         Login = {Login}
         Search = {Search}
-        SelectDorm = {SelectDorm}  
+        SelectDorm = {SelectDorm}
+        showCross = {false}    
       />}/>
       <Route path="/listing" element={<ListingPage
         {...data}
         Login = {Login}
         Search = {Search}
-        SelectDorm = {SelectDorm}  
+        SelectDorm = {SelectDorm}
+        showCross = {false}   
       />}/>
+      <Route path="/dormlist" element={<MyDormPage
+        {...data}
+        Login = {Login}
+        Search = {Search}
+        SelectDorm = {SelectDorm}
+        showCross = {true}  
+      />}/>
+      
     </Routes>
   );
 }

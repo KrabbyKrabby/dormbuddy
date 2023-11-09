@@ -1,0 +1,22 @@
+html{
+    height: 100%;
+  }
+    
+  h1{
+    margin: 0px;
+  }
+
+  .mainListings{
+    display: flex;
+    flex-direction: column;
+  }
+
+  .dormPageTitle{
+    margin-top: 2%;
+    align-self: center;
+  }
+
+  .MyDormCards{
+    display: flex;
+    flex-direction: row;
+  }

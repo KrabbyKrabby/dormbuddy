@@ -119,6 +119,16 @@ h1{
         margin-top: 10%;
     }
 
+    .title-close{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+    }
+
+    .crossIcon{
+        margin-left: auto;
+    }
+
 
 
 
