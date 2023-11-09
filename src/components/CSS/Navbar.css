@@ -16,10 +16,6 @@ html{
     align-items: center;
   }
 
-  .title{
-    color: #F0DEDE;
-    margin-left: 20px;
-  }
 
   button{
     height: 36px;
@@ -45,7 +41,6 @@ html{
     border: 0px;
     margin-left: 50px;
     color: #F0DEDE;
-
   }
 
   .contactUs{
@@ -81,4 +76,14 @@ html{
     width: 110px;
     margin-right: 30px;
     color: #F0DEDE;
+  }
+  
+  .title{
+    background: #17514D;
+    border: 0px;
+    margin-left: 50px;
+    color: #F0DEDE;
+    color: #F0DEDE;
+    margin-left: 20px;
+    font-size: 30px;
   }

@@ -6,6 +6,7 @@ import LoginPage from './pages/LoginPage';
 import SignupPage from './pages/SignupPage';
 import SearchPage from './pages/SearchPage';
 import DormPage from './pages/DormPage';
+import ListingPage from './pages/ListingPage';
 
 function App() {
 
@@ -20,34 +21,34 @@ function App() {
         kitchen: true,
       },
       currentDorm: {
-        postId:1,
-        userEmail:"post1@gmail.com",
-        userContact:"01712345678",
-        title : "Dorm 1",
-        rent : 1000,
-        mapLink : "Location 1",
+        postId:null,
+        userEmail:"",
+        userContact:"",
+        title : "",
+        rent : null,
+        mapLink : "",
         address:{
-            house: null,
-            street:"Street 1",
-            city:"City 1",
+            house: "",
+            street:"",
+            city:"",
         },
         images :{
-            imagePath1:"./publicImage/image1.jpg",
-            imagePath2:"./publicImage/image2.jpg",
-            imagePath3:"./publicImage/image3.jpg",
+            imagePath1:"",
+            imagePath2:"",
+            imagePath3:"",
         },
-        windowCount : 4,
+        windowCount : null,
         isToiletAttached : true,
         isKitchenAvailable : true,
         dimensions:{
-            height:10,
-            width:15,
+            length:null,
+            width:null,
         },
-        vacancy : 1,
-        capacity : 2,
-        keyFeatures : "Good place",
-        description : "IDK Dorm Good",
-        prefGender : "male",
+        vacancy : null,
+        capacity : null,
+        keyFeatures : "",
+        description : "",
+        prefGender : "",
       }
     }
   );
@@ -112,6 +113,12 @@ function App() {
         SelectDorm = {SelectDorm}  
       />}/>
       <Route path="/dorm" element={<DormPage
+        {...data}
+        Login = {Login}
+        Search = {Search}
+        SelectDorm = {SelectDorm}  
+      />}/>
+      <Route path="/listing" element={<ListingPage
         {...data}
         Login = {Login}
         Search = {Search}

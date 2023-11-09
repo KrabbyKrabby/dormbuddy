@@ -25,7 +25,7 @@ export default function DormPage(props) {
                         </div>
                         <div className='dormpage-address-link'>
                             <div className='dormpage-address'>
-                                <h1>{"House no: " + props.currentDorm.address.house}</h1>
+                                <h1>{props.currentDorm.address.house}</h1>
                                 <h1>{props.currentDorm.address.street}</h1>
                                 <h1>{props.currentDorm.address.city}</h1>
                             </div>
@@ -66,11 +66,11 @@ export default function DormPage(props) {
                         <h1 className='contact-agent'>Contact Agent</h1>
                         <div className='contact-info'>
                             <img src = {PhoneLogo} alt = 'Phone Logo' className='phone-logo'/>
-                            <h1 className='phone-number'>+94 77 123 4567</h1>
+                            <h1 className='phone-number'>{props.currentDorm.userContact}</h1>
                         </div>
                         <div className='email-info'>
                             <img src = {EmailLogo} alt = 'Email Logo' className='email-logo'/>
-                            <h1 className='email'>dormbuddy@gmail.com</h1>
+                            <h1 className='email'>{props.currentDorm.userEmail}</h1>
                         </div>
                         <h1 className='safety-tips'>Note</h1>
                         <h1 className='safety-tip-info'>For any inconvenience please contact our helpline</h1>

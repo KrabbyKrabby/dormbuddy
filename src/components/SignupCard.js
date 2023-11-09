@@ -23,7 +23,6 @@ export default function SignupCard() {
     }
 
     return (
-        
         <div className="signupSignupCard">
             <form className="signupUpperCard" onSubmit={handleSubmit}>
                 <h1 className='signupTitle'>Register</h1>

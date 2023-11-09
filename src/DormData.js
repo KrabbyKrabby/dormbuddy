@@ -7,7 +7,7 @@ export default [
         rent : 1000,
         mapLink : "Location 1",
         address:{
-            house: 1,
+            house: "House 1",
             street:"Street 1",
             city:"City 1",
         },
@@ -20,7 +20,7 @@ export default [
         isToiletAttached : true,
         isKitchenAvailable : true,
         dimensions:{
-            height:10,
+            length:10,
             width:15,
         },
         vacancy : 1,
@@ -36,7 +36,7 @@ export default [
         rent : 2000,
         mapLink : "Location 2",
         address:{
-            house: 2,
+            house: "House 2",
             street:"Street 2",
             city:"City 2",
         },
@@ -65,7 +65,7 @@ export default [
         rent : 3000,
         mapLink : "Location 3",
         address:{
-            house: 3,
+            house: "House 3",
             street:"Street 3",
             city:"City 3",
         },
