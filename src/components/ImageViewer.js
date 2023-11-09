@@ -1,8 +1,5 @@
 import './CSS/ImageViewer.css'
 import React from 'react'
-import DummyImage1 from '../images/image1.jpg'
-import DummyImage2 from '../images/image2.jpg'
-import DummyImage3 from '../images/image3.jpg'
 import LeftArrow from '../images/BackArrow.png'
 import RightArrow from '../images/RightArrow.png'
 
@@ -32,7 +29,7 @@ export default function ImageViewer(props) {
         <div className='imageViewerContainer'>
             <div className='upperImageContainer'>
                 <img src = {LeftArrow} alt = 'DummyImage' className='leftArrowImage' onClick={handleLeftArrowClick}/>
-                <img src = { selectedImage === 1 ? DummyImage1 : selectedImage === 2 ? DummyImage2:DummyImage3 } alt = 'DummyImage' className='upperImage'/>
+                <img src = { selectedImage === 1 ? props.currentDorm.images.imagePath1 : selectedImage === 2 ? props.currentDorm.images.imagePath2:props.currentDorm.images.imagePath3 } alt = 'DummyImage' className='upperImage'/>
                 <img src = {RightArrow} alt = 'DummyImage' className='rightArrowImage' onClick={handleRightArrowClick}/>
             </div>
             <div className='lowerImageContainer'>

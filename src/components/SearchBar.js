@@ -18,14 +18,13 @@ export default function(props){
         })
     }
     function handleSubmit(){
-        console.log(formData)
-        props.Search(formData)
-        navigate('/dorm')
+         props.Search(formData)
+        //call API
     }
 
 
     return(
-        <form className="searchBar" onSubmit={handleSubmit}>
+        <div className="searchBar" onSubmit={handleSubmit}>
             <input type="text" className="location" placeholder="Location?" onChange={handleChange} name="location" value={formData.location}></input>
             <input type="text" className="rent" placeholder="Rent?" onChange={handleChange} name="rent" value={formData.rent}></input>
             <input type="text" className="sizeSearchbar" placeholder="Size?" onChange={handleChange} name="size" value={formData.size}></input>
@@ -37,6 +36,6 @@ export default function(props){
             <label htmlFor="kitchen">Kitchen?</label>
 
             <button className="filterButton" onClick={ handleSubmit }>Filter</button>
-        </form>
+        </div>
     );
 }

@@ -6,10 +6,15 @@ export default function Navbar(props){
 
     const navigate = useNavigate()
 
+    function onSubmit()
+    {
+        // props.personEmail === "" ? navigate('/login') : navigate('/listing')
+    }
+
     return(
         <nav className="navbar">
             <h1 className="title">DormBuddy</h1>
-            <button className="agents">Agents</button>
+            <button className="agents" onClick={onSubmit}>Create Listing</button>
             <button className="blog">Blog</button>
             <button className="aboutUs">About Us</button>
             <button className="contactUs">Contact Us</button>

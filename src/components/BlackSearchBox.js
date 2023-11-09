@@ -5,7 +5,7 @@ export default function BlackSearchBox(props) {
 
     const navigate = useNavigate()
 
-    const [formData, setFormData] = React.useState({ location: "", rent: "", size: "", toilet: true, kitchen: true })
+    const [formData, setFormData] = React.useState(props.navbarInfo)
 
     function handleChange(e) {
         const { name, value, type, checked } = e.target
@@ -19,7 +19,8 @@ export default function BlackSearchBox(props) {
     function handleSubmit(){
         console.log(formData)
         props.Search(formData)
-        navigate('/search')
+
+        props.personEmail === "" ? navigate('/login') : navigate('/search')
     }
 
     return(
