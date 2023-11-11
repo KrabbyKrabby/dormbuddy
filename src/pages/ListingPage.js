@@ -18,7 +18,7 @@ export default function ListingPage(props) {
 
     const UploadImage = () => {
         if (imageUpload === null) return;
-        const imageRef = ref(storage, `images/${props.personEmail}/${props.personPostCount+1}/${imageUpload.name}`);
+        const imageRef = ref(storage, `images/${props.personEmail}/${imageUpload.name}`);
         uploadBytes(imageRef, imageUpload).then((snapshot) => {
             getDownloadURL(snapshot.ref).then((url) => {
                 setImageList((prev) => [...prev, url]);
@@ -75,7 +75,6 @@ export default function ListingPage(props) {
         {
             postId: null,
             userEmail: props.personEmail,
-            userPostCount: props.personPostCount,
             userContact: "",
             title: "",
             rent: null,
@@ -112,7 +111,6 @@ export default function ListingPage(props) {
                 ...prevdata,
                 postId: null,
                 userEmail: props.personEmail,
-                userPostCount: prevdata.userPostCount + 1,
                 userContact: data.userContact,
                 title: data.title,
                 rent: data.rent,

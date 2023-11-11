@@ -14,7 +14,6 @@ function App() {
   const [data, setData] = React.useState(
     {
       personEmail: "",
-      personPostCount: 0,
       navbarInfo: {
         location: '',
         rent: null,

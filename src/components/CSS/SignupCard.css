@@ -81,3 +81,8 @@ h1{
     border: #919191;
     font-size: 18px;
   }
+
+  .errorMessage{
+    color: #c20f0f;
+    font-size: 18px;
+  }
