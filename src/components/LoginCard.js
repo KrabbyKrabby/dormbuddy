@@ -8,6 +8,7 @@ export default function LoginCard(props){
 
     const [formData, setFormData] = React.useState({ email: "", password: "" })
     const [errorMessage, setErrorMessage] = React.useState("");
+    const [res, setRes] = React.useState(null)
 
     function handleChange(e) {
         const { name, value, type, checked } = e.target
@@ -24,10 +25,10 @@ export default function LoginCard(props){
             email: formData.email,
             password: formData.password,
         }
-        axios.post("http://localhost:8080/api/v1/auth/auth", loginInfo)
+        axios.post("http://localhost:8080/api/v1/auth/user/login", loginInfo)
         .then((response) => {
-            if( response.id == null){
-                setErrorMessage("Enter Correct Credentials");
+            if( response.id === null){
+                setRes(response);
                 return;
             }
         });
@@ -40,6 +41,7 @@ export default function LoginCard(props){
             return;
         }
         loginAPI();
+        console.log(res);
         if( errorMessage === "Enter Correct Credentials" ) return;
         props.Login(formData.email)
         navigate('/')

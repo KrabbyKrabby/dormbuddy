@@ -26,7 +26,7 @@ export default function SignupCard() {
             email: formData.email,
             password: formData.password,
         }
-        axios.post("http://localhost:8080/api/v1/auth/register", registerInfo)
+        axios.post("http://localhost:8080/api/v1/auth/user/signup", registerInfo)
         .then((response) => {
             if( response.id == null){
                 setErrorMessage("This email is already registered");
