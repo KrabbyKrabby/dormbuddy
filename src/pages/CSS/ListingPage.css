@@ -106,9 +106,22 @@ html{
     color: #F0DEDE;
   }
 
-  .lowerImageContainer{
+  .lowerImageContainerListing{
     width: 60%;
+    height: 60%;
+    margin-top: 2%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
   }
+
+  .lowerImageContainerListing > img{
+    height: 150px;
+    width: 150px;
+    margin: 2%;
+  }
+  
 
 
 

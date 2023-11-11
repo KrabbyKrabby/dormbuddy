@@ -39,15 +39,15 @@ export default function(props){
                     <h1 className="dormAddress">{props.item.address.street}</h1>
                     <div className='size'>
                         <img src={SizeLogo} alt="sizeLogo" className="sizeLogo"></img>
-                        <h1 className='squarefeet'>{(props.item.dimensions.height*props.item.dimensions.width) + " Sq Ft"}</h1>
+                        <h1 className='squarefeet'>{(props.item.dimensions.length*props.item.dimensions.width) + " Sq Ft"}</h1>
                     </div>
                     <div className="dormAmenities">
                         <img src={WindowLogo} alt="Window Logo" className="windowLogo"></img>
                         <h1 className='windowNo'>{props.item.windowCount}</h1>
                         <img src={KitchenLogo} alt="Kitchen Logo" className="kitchenLogo"></img>
-                        <h1 className='kitchenAvailable'>{props.item.isToiletAttached ? "Attached" : "Not Attached"}</h1>
+                        <h1 className='kitchenAvailable'>{props.item.isToiletAttached ? "Available" : "Not Available"}</h1>
                         <img src={ToiletLogo} alt="Toilet Logo" className="toiletLogo"></img>
-                        <h1 className='toiletAvailable'>{props.item.isKitchenAvailable ? "Available" : "Not Available"}</h1>
+                        <h1 className='toiletAvailable'>{props.item.isKitchenAvailable ? "Attached" : "Not Attached"}</h1>
                     </div>
                 </div>
             </div>

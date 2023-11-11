@@ -72,7 +72,7 @@ export default function DormPage(props) {
                             <img src = {EmailLogo} alt = 'Email Logo' className='email-logo'/>
                             <h1 className='email'>{props.currentDorm.userEmail}</h1>
                         </div>
-                        <h1 className='safety-tips'>Note</h1>
+                        <h1 className='safety-tips'>Note!</h1>
                         <h1 className='safety-tip-info'>For any inconvenience please contact our helpline</h1>
                     </div>
                 </div>

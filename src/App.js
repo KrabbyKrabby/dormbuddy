@@ -14,6 +14,7 @@ function App() {
   const [data, setData] = React.useState(
     {
       personEmail: "",
+      personPostCount: 0,
       navbarInfo: {
         location: '',
         rent: null,
@@ -24,6 +25,7 @@ function App() {
       currentDorm: {
         postId:null,
         userEmail:"",
+        userPostCount: null,
         userContact:"",
         title : "",
         rent : null,
@@ -60,6 +62,17 @@ function App() {
         return {
           ...prevdata,
           personEmail: email,
+        }
+      }
+    )
+  }
+
+  function IncreasePostCount(){
+    setData(
+      prevdata => {
+        return {
+          ...prevdata,
+          personPostCount: prevdata.personPostCount + 1,
         }
       }
     )
@@ -129,6 +142,7 @@ function App() {
         Login = {Login}
         Search = {Search}
         SelectDorm = {SelectDorm}
+        IncreasePostCount = {IncreasePostCount}
         showCross = {false}   
       />}/>
       <Route path="/dormlist" element={<MyDormPage

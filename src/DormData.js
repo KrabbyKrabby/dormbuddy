@@ -49,7 +49,7 @@ export default [
         isToiletAttached : false,
         isKitchenAvailable : true,
         dimensions:{
-            height:10,
+            length:10,
             width:15,
         },
         vacancy : 1,
@@ -78,7 +78,7 @@ export default [
         isToiletAttached : true,
         isKitchenAvailable :false,
         dimensions:{
-            height:10,
+            length:10,
             width:15,
         },
         vacancy : 1,
