@@ -7,12 +7,12 @@ import axios from 'axios';
 import React from 'react';
 
 const getURL = "https://tourismpracticespring-production.up.railway.app/api/v1/tourism"
-const postURL = "https://tourismpracticespring-production.up.railway.app/api/v1/tourism/add"
+const postURL = "http://localhost:8080/api/v1/auth/user/login"
 
 export default function LoginPage(props) {
 
 
-    // const [post, setPost] = React.useState(null);
+    const [post, setPost] = React.useState(null);
 
     // React.useEffect(() => {
     //     axios.get(getURL).then((response) => {
@@ -23,22 +23,21 @@ export default function LoginPage(props) {
     //         })
     // },[]);
 
-    // function createPost() {
-    //     axios.post(postURL, {
-    //         spotName: "go right fn",
-    //         openingDate: "2021-01-01",
-    //         closingDate: "2021-12-31",
-    //         description: "no no ",
-    //         location: "France"
-    //     })
-    //         .then((response) => {
-    //             setPost(response.data);
-    //         });
-    // }
+    function createPost() {
+        axios.post(postURL, {
+            "email":"test",
+            "password":"test"
+        })
+            .then((response) => {
+                setPost(response.data);
+            });
+    }
 
     return (
         <main className="main">
             <Navbar {...props} />
+            {/* <h1>{JSON.stringify(post)}</h1> */}
+            {/* <button onClick={createPost}>Create Post</button> */}
             <LoginCard {...props} />
             <Footer />
         </main>

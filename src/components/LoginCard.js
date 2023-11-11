@@ -1,8 +1,8 @@
-import React from "react";
+import React, { useEffect } from "react";
 import './CSS/LoginCard.css';
-import {useNavigate} from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
-export default function LoginCard(props){
+export default function LoginCard(props) {
 
     const navigate = useNavigate()
 
@@ -20,34 +20,37 @@ export default function LoginCard(props){
         })
     }
 
-    function loginAPI(){
+    const loginAPI = async () => {
         const loginInfo = {
             email: formData.email,
             password: formData.password,
         }
-        axios.post("http://localhost:8080/api/v1/auth/user/login", loginInfo)
-        .then((response) => {
-            if( response.id === null){
-                setRes(response);
-                return;
-            }
-        });
+        await axios.post("http://localhost:8080/api/v1/auth/user/login", loginInfo)
+            .then((response) => {
+                console.log(response.data);
+                if (response.data.id === -1) {
+                    setErrorMessage("Incorrect email or password");
+                    return;
+                } else {
+
+                    props.Login(formData.email)
+                    navigate('/')
+                }
+            });
     }
 
-    function handleSubmit(){
+    function handleSubmit() {
 
-        if( formData.email === "" || formData.password === ""){
+        if (formData.email === "" || formData.password === "") {
             setErrorMessage("*Please fill in all the fields");
             return;
         }
+
         loginAPI();
-        console.log(res);
-        if( errorMessage === "Enter Correct Credentials" ) return;
-        props.Login(formData.email)
-        navigate('/')
+
     }
 
-    return(
+    return (
         <div className="loginCard">
             <div className="upperCard" onSubmit={handleSubmit}>
                 <h1>Login</h1>
@@ -57,10 +60,10 @@ export default function LoginCard(props){
                 <button className="forgotPassword">Forgot Password?</button>
                 <button className="loginButton" onClick={handleSubmit}>Login</button>
             </div>
-                
+
             <div className="lowerCard">
                 <h1 className="notYetRegistered">Not yet registered?</h1>
-                <button className="register" onClick={ () => navigate('/signup')}>Register</button>
+                <button className="register" onClick={() => navigate('/signup')}>Register</button>
             </div>
         </div>
     );
