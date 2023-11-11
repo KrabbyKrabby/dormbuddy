@@ -32,6 +32,7 @@ export default [
     {
         postID : 2,
         userEmail:"chowdhuryittehad@gmail.com",
+        userContact:"01712345678",
         title : "Dorm 2",
         rent : 2000,
         mapLink : "Location 2",
