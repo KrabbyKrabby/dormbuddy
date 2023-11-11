@@ -26,7 +26,10 @@ export default function LoginCard(props){
         }
         axios.post("http://localhost:8080/api/v1/auth/auth", loginInfo)
         .then((response) => {
-            
+            if( response.id == null){
+                setErrorMessage("Enter Correct Credentials");
+                return;
+            }
         });
     }
 
@@ -37,6 +40,7 @@ export default function LoginCard(props){
             return;
         }
         loginAPI();
+        if( errorMessage === "Enter Correct Credentials" ) return;
         props.Login(formData.email)
         navigate('/')
     }

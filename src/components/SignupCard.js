@@ -28,7 +28,10 @@ export default function SignupCard() {
         }
         axios.post("http://localhost:8080/api/v1/auth/register", registerInfo)
         .then((response) => {
-            
+            if( response.id == null){
+                setErrorMessage("This email is already registered");
+                return;
+            }
         });
     }
 
@@ -40,6 +43,7 @@ export default function SignupCard() {
         }
 
         signupAPI();
+        if( errorMessage === "This email is already registered" ) return;
         navigate('/login')
     }
 
