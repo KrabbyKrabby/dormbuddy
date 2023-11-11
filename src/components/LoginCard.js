@@ -8,7 +8,6 @@ export default function LoginCard(props) {
 
     const [formData, setFormData] = React.useState({ email: "", password: "" })
     const [errorMessage, setErrorMessage] = React.useState("");
-    const [res, setRes] = React.useState(null)
 
     function handleChange(e) {
         const { name, value, type, checked } = e.target
@@ -32,7 +31,6 @@ export default function LoginCard(props) {
                     setErrorMessage("Incorrect email or password");
                     return;
                 } else {
-
                     props.Login(formData.email)
                     navigate('/')
                 }
