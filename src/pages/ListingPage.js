@@ -2,13 +2,13 @@ import { json } from "react-router";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import "./CSS/ListingPage.css";
-import React from 'react';
+import React, { useEffect } from 'react';
 import { storage } from '../firebase';
 import { ref, uploadBytes, listAll, getDownloadURL } from 'firebase/storage';
-import {useNavigate} from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
-import {v4} from 'uuid';
- 
+import { v4 } from 'uuid';
+
 export default function ListingPage(props) {
 
     const navigate = useNavigate()
@@ -17,20 +17,10 @@ export default function ListingPage(props) {
 
     const [imageUpload, setImageUpload] = useState(null);
     const [imageList, setImageList] = useState([]);
+
     const [errorMessage, setErrorMessage] = React.useState("");
-    const [postID, setPostID] = React.useState(`images/${ props.personEmail + v4 }`);
-
-
-    
-    const UploadImage = () => {
-        if (imageUpload === null) return;
-        const imageRef = ref(storage, postID);
-        uploadBytes(imageRef, imageUpload).then((snapshot) => {
-            getDownloadURL(snapshot.ref).then((url) => {
-                setImageList((prev) => [...prev, url]);
-            });
-        });
-    }
+    const [postID, setPostID] = React.useState(`images/${props.personEmail + v4()}`);
+    const [checked, setChecked] = React.useState(false);
 
     const [data, setData] = React.useState(
         {
@@ -45,10 +35,6 @@ export default function ListingPage(props) {
             street: "",
             city: "",
 
-            imagePath1: "",
-            imagePath2: "",
-            imagePath3: "",
-
             windowCount: null,
             isToiletAttached: true,
             isKitchenAvailable: true,
@@ -60,23 +46,13 @@ export default function ListingPage(props) {
             capacity: null,
             keyFeatures: "",
             description: "",
-            prefGender: "",
+            prefGender: "Male",
         }
     )
 
-    function handleChange(e) {
-        const { name, value, type, checked } = e.target
-        setData(prevState => {
-            return {
-                ...prevState,
-                [name]: type === "checkbox" ? checked : value
-            }
-        })
-    }
-
     const [formData, setFormData] = React.useState(
         {
-            postIdHash: "",
+            postIdHash: postID,
             userEmail: props.personEmail,
             userContact: "",
             title: "",
@@ -86,11 +62,6 @@ export default function ListingPage(props) {
                 house: "",
                 street: "",
                 city: "",
-            },
-            images: {
-                imagePath1: "",
-                imagePath2: "",
-                imagePath3: "",
             },
             windowCount: null,
             isToiletAttached: true,
@@ -103,43 +74,68 @@ export default function ListingPage(props) {
             capacity: null,
             keyFeatures: "",
             description: "",
-            prefGender: "",
+            prefGender: "Male",
+            imageList: [
+            ]
         }
     );
 
-    const fromSubmitAPI = async () => {
+    const UploadImage = () => {
+        if (imageUpload === null) return;
+        const imageRef = ref(storage, `${postID}/${imageUpload.name}`);
+        uploadBytes(imageRef, imageUpload).then((snapshot) => {
+            getDownloadURL(snapshot.ref).then((url) => {
+                setImageList((prev) => [...prev, url]);
+            });
+        });
+    }
 
-        const formInfo = {
-            ...formData,
-            toiletAttached: formData.isToiletAttached,
-            kitchenAvailable: formData.isKitchenAvailable,
-            imageList:[
-                {
-                    imagePath : formData.images.imagePath1,
-                },
-                {
-                    imagePath : formData.images.imagePath2,
-                },
-                {
-                    imagePath : formData.images.imagePath3,
-                }
-            ]
-        }
-        
-        await axios.post("http://localhost:8080/api/v1/roomPost/add", formInfo)
+
+
+    function handleChange(e) {
+        const { name, value, type, checked } = e.target
+        setData(prevState => {
+            return {
+                ...prevState,
+                [name]: type === "checkbox" ? checked : value
+            }
+        })
+    }
+
+
+
+    const fromSubmitAPI = () => {
+
+        console.log(formData);
+
+        axios.post("https://dormbuddy-production.up.railway.app/api/v1/roomPost/add", formData)
             .then((response) => {
                 if( response.data.postIdHash === postID ){
+                    console.log(response);
                     navigate('/')
                 }
             });
     }
 
+    useEffect(() => {
+        if( imageList.length >= 3 ) fromSubmitAPI();
+    },[checked]);
+
     function onSubmit() {
-        if (formData.userContact === "" || formData.title === "" || formData.rent === null || formData.mapLink === "" || formData.address.house === "" || formData.address.street === "" || formData.address.city === "" || formData.images.imagePath1 === "" || formData.images.imagePath2 === "" || formData.images.imagePath3 === "" || formData.windowCount === null || formData.dimensions.length === null || formData.dimensions.width === null || formData.vacancy === null || formData.capacity === null || formData.keyFeatures === "" || formData.description === "" || formData.prefGender === "") {
+
+        if (data.userContact === "" || data.title === "" || data.rent === null || data.mapLink === "" || data.house === "" || data.street === "" || data.city === ""  || data.windowCount === null || data.length === null || data.width === null || data.vacancy === null || data.capacity === null || data.keyFeatures === "" || data.description === "" || data.prefGender === "") {
             setErrorMessage("*Please fill in all the fields");
             return;
         }
+        if( imageList.length < 3 ){
+            setErrorMessage("*Please upload at least 3 images");
+            return;
+        }
+        
+
         setFormData(prevdata => {
+            console.log(checked);
+            setChecked(!checked);
             return {
                 ...prevdata,
                 postIdHash: data.postIdHash,
@@ -153,11 +149,6 @@ export default function ListingPage(props) {
                     street: data.street,
                     city: data.city,
                 },
-                images: {
-                    imagePath1: imageList[0],
-                    imagePath2: imageList[1],
-                    imagePath3: imageList[2],
-                },
                 windowCount: data.windowCount,
                 isToiletAttached: data.isToiletAttached,
                 isKitchenAvailable: data.isKitchenAvailable,
@@ -170,18 +161,30 @@ export default function ListingPage(props) {
                 keyFeatures: data.keyFeatures,
                 description: data.description,
                 prefGender: data.prefGender,
+
+                toiletAttached: formData.isToiletAttached,
+                kitchenAvailable: formData.isKitchenAvailable,
+                imageList: [
+                    {
+                        imagePath: imageList[0],
+                    },
+                    {
+                        imagePath: imageList[1],
+                    },
+                    {
+                        imagePath: imageList[2],
+                    }
+                ]
             }
-        }
-        )
-
-
-        fromSubmitAPI();
-        // navigate('/')
+        });
+        setErrorMessage("");
     }
     return (
         <main className="listingMain">
             <Navbar {...props} />
+            
             <div className="formPage">
+                <h1 className="errorMessage">{errorMessage}</h1>
                 <h1 className="formName">Dorm Listing Form</h1>
 
                 <textarea className="formTitle" placeholder="Title" onChange={handleChange} name="title" value={data.title} />
@@ -235,7 +238,7 @@ export default function ListingPage(props) {
                     })}
                 </div>
 
-                <input type="file" multiple accept="image/*" onChange={(event) => setImageUpload(event.target.files[0])} name="imagePath1"  />
+                <input type="file" multiple accept="image/*" onChange={(event) => setImageUpload(event.target.files[0])} name="imagePath1" />
 
                 <button className="uploadButton" onClick={UploadImage} >Upload</button>
                 <button className="submitButton" onClick={onSubmit} >Submit</button>

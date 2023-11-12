@@ -23,15 +23,15 @@ export default function LoginPage(props) {
     //         })
     // },[]);
 
-    function createPost() {
-        axios.post(postURL, {
-            "email":"test",
-            "password":"test"
-        })
-            .then((response) => {
-                setPost(response.data);
-            });
-    }
+    // function createPost() {
+    //     axios.post(postURL, {
+    //         "email":"test",
+    //         "password":"test"
+    //     })
+    //         .then((response) => {
+    //             setPost(response.data);
+    //         });
+    // }
 
     return (
         <main className="main">

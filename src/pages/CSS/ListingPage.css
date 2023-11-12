@@ -121,6 +121,11 @@ html{
     width: 150px;
     margin: 2%;
   }
+
+  .errorMessage{
+    color: #c20f0f;
+    font-size: 18px;
+  }
   
 
 

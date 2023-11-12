@@ -24,7 +24,7 @@ export default function LoginCard(props) {
             email: formData.email,
             password: formData.password,
         }
-        await axios.post("http://localhost:8080/api/v1/auth/user/login", loginInfo)
+        await axios.post("https://dormbuddy-production.up.railway.app/api/v1/auth/user/login", loginInfo)
             .then((response) => {
                 console.log(response.data);
                 if (response.data.id === -1) {
@@ -39,8 +39,8 @@ export default function LoginCard(props) {
 
     function handleSubmit() {
         ///remove!!!!
-        props.Login(formData.email)
-        navigate('/')
+        // props.Login(formData.email)
+        // navigate('/')
 
         if (formData.email === "" || formData.password === "") {
             setErrorMessage("*Please fill in all the fields");
