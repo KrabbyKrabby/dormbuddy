@@ -33,15 +33,21 @@ function App() {
             street:"",
             city:"",
         },
-        images :{
-            imagePath1:"",
-            imagePath2:"",
-            imagePath3:"",
-        },
+        imageList:[
+          {
+            imagePath:""
+          },
+          {
+            imagePath:""
+          },
+          {
+            imagePath:""
+          }
+        ],
         windowCount : null,
         isToiletAttached : true,
         isKitchenAvailable : true,
-        dimensions:{
+        dimension:{
             length:null,
             width:null,
         },

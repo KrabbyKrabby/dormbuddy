@@ -29,13 +29,13 @@ export default function ImageViewer(props) {
         <div className='imageViewerContainer'>
             <div className='upperImageContainer'>
                 <img src = {LeftArrow} alt = 'DummyImage' className='leftArrowImage' onClick={handleLeftArrowClick}/>
-                <img src = { selectedImage === 1 ? props.currentDorm.images.imagePath1 : selectedImage === 2 ? props.currentDorm.images.imagePath2:props.currentDorm.images.imagePath3 } alt = 'DummyImage' className='upperImage'/>
+                <img src = { selectedImage === 1 ? props.currentDorm.imageList[0].imagePath : selectedImage === 2 ? props.currentDorm.imageList[1].imagePath:props.currentDorm.imageList[2].imagePath} alt = 'DummyImage' className='upperImage'/>
                 <img src = {RightArrow} alt = 'DummyImage' className='rightArrowImage' onClick={handleRightArrowClick}/>
             </div>
             <div className='lowerImageContainer'>
-                <img src = {props.currentDorm.images.imagePath1} alt = 'DummyImage' className='lowerImage1' style={ selectedImage === 1 ? {'border':'solid'} : {} }/>
-                <img src = {props.currentDorm.images.imagePath2} alt = 'DummyImage' className='lowerImage2' style={ selectedImage === 2 ? {'border':'solid'} : {} }/>
-                <img src = {props.currentDorm.images.imagePath3} alt = 'DummyImage' className='lowerImage3' style={ selectedImage === 3 ? {'border':'solid'} : {} }/>
+                <img src = {props.currentDorm.imageList[0].imagePath} alt = 'DummyImage' className='lowerImage1' style={ selectedImage === 1 ? {'border':'solid'} : {} }/>
+                <img src = {props.currentDorm.imageList[1].imagePath} alt = 'DummyImage' className='lowerImage2' style={ selectedImage === 2 ? {'border':'solid'} : {} }/>
+                <img src = {props.currentDorm.imageList[2].imagePath} alt = 'DummyImage' className='lowerImage3' style={ selectedImage === 3 ? {'border':'solid'} : {} }/>
             </div>
         </div>
     );

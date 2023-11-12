@@ -5,8 +5,8 @@ h1{
   .imageViewerContainer{
     display: flex;
     flex-direction: column;
-    width: 70%;
-    height: 800px;
+    width: 60%;
+    height: 750px;
   }
 
   .upperImageContainer{
@@ -22,7 +22,6 @@ h1{
   .upperImage{
     width: 90%;
     height: 100%;
-
   }
 
   .lowerImageContainer{

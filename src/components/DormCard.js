@@ -29,7 +29,7 @@ export default function(props){
             </div>
             
             <div className="innerCard">
-                <img className='dormImage' src={props.item.images.imagePath1}></img>
+                <img className='dormImage' src={props.item.imageList[0].imagePath}></img>
                 <div className="dormInfo">
                     <div className="dormCity">
                         <img src={LocationLogo} alt="Location Logo" className="locationLogo"></img>
@@ -39,7 +39,7 @@ export default function(props){
                     <h1 className="dormAddress">{props.item.address.street}</h1>
                     <div className='size'>
                         <img src={SizeLogo} alt="sizeLogo" className="sizeLogo"></img>
-                        <h1 className='squarefeet'>{(props.item.dimensions.length*props.item.dimensions.width) + " Sq Ft"}</h1>
+                        <h1 className='squarefeet'>{(props.item.dimension.length*props.item.dimension.width) + " Sq Ft"}</h1>
                     </div>
                     <div className="dormAmenities">
                         <img src={WindowLogo} alt="Window Logo" className="windowLogo"></img>

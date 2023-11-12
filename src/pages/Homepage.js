@@ -6,10 +6,25 @@ import './CSS/Homepage.css';
 import HomepageImage from '../images/HomepageImage.png'
 import BlackSearchBox from '../components/BlackSearchBox';
 import DormData from '../DormData';
+import { useEffect } from 'react';
+import React from 'react';
+import axios from 'axios';
+
 
 export default function Homepage(props) {
 
-    const Cards = DormData.map((dorm) => {
+    const [featuredDorm, setFeaturedDorm] = React.useState([]);
+
+    useEffect(() => {
+        axios.get("https://dormbuddy-production.up.railway.app/api/v1/roomPost/getFeatured")
+            .then((response) => {
+                setFeaturedDorm(response.data);
+                console.log(response.data);
+            });
+      }, [])
+
+    const Cards = featuredDorm.map((dorm) => {
+        console.log(dorm);
         return (
             <DormCard 
                 item = {dorm}
@@ -24,10 +39,8 @@ export default function Homepage(props) {
             <div className='homepageContainer'>
 
                 <div className='homepageImageContainer'>
-
                     <BlackSearchBox {...props}/>
                     <img src = {HomepageImage} alt = 'HomepageImage' className='homepageImage'/>
-                    
                 </div>
 
                 <h1 className='featured'>Featured Apartments</h1>

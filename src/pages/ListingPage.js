@@ -66,7 +66,7 @@ export default function ListingPage(props) {
             windowCount: null,
             isToiletAttached: true,
             isKitchenAvailable: true,
-            dimensions: {
+            dimension: {
                 length: null,
                 width: null,
             },
@@ -105,9 +105,6 @@ export default function ListingPage(props) {
 
 
     const fromSubmitAPI = () => {
-
-        console.log(formData);
-
         axios.post("https://dormbuddy-production.up.railway.app/api/v1/roomPost/add", formData)
             .then((response) => {
                 if( response.data.postIdHash === postID ){
@@ -152,7 +149,7 @@ export default function ListingPage(props) {
                 windowCount: data.windowCount,
                 isToiletAttached: data.isToiletAttached,
                 isKitchenAvailable: data.isKitchenAvailable,
-                dimensions: {
+                dimension: {
                     length: data.length,
                     width: data.width,
                 },
