@@ -22,9 +22,8 @@ function App() {
         kitchen: true,
       },
       currentDorm: {
-        postId:null,
+        postIdHash:"",
         userEmail:"",
-        userPostCount: null,
         userContact:"",
         title : "",
         rent : null,

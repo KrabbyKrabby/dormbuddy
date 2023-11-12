@@ -38,6 +38,9 @@ export default function LoginCard(props) {
     }
 
     function handleSubmit() {
+        ///remove!!!!
+        props.Login(formData.email)
+        navigate('/')
 
         if (formData.email === "" || formData.password === "") {
             setErrorMessage("*Please fill in all the fields");

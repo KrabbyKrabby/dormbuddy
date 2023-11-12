@@ -5,8 +5,10 @@ import "./CSS/ListingPage.css";
 import React from 'react';
 import { storage } from '../firebase';
 import { ref, uploadBytes, listAll, getDownloadURL } from 'firebase/storage';
-import { useEffect } from 'react';
 import {useNavigate} from 'react-router-dom';
+import axios from 'axios';
+import {v4} from 'uuid';
+ 
 export default function ListingPage(props) {
 
     const navigate = useNavigate()
@@ -15,10 +17,14 @@ export default function ListingPage(props) {
 
     const [imageUpload, setImageUpload] = useState(null);
     const [imageList, setImageList] = useState([]);
+    const [errorMessage, setErrorMessage] = React.useState("");
+    const [postID, setPostID] = React.useState(`images/${ props.personEmail + v4 }`);
 
+
+    
     const UploadImage = () => {
         if (imageUpload === null) return;
-        const imageRef = ref(storage, `images/${props.personEmail}/${imageUpload.name}`);
+        const imageRef = ref(storage, postID);
         uploadBytes(imageRef, imageUpload).then((snapshot) => {
             getDownloadURL(snapshot.ref).then((url) => {
                 setImageList((prev) => [...prev, url]);
@@ -28,7 +34,7 @@ export default function ListingPage(props) {
 
     const [data, setData] = React.useState(
         {
-            postId: null,
+            postIdHash: postID,
             userEmail: props.personEmail,
             userContact: "",
             title: "",
@@ -68,12 +74,9 @@ export default function ListingPage(props) {
         })
     }
 
-
-
-
     const [formData, setFormData] = React.useState(
         {
-            postId: null,
+            postIdHash: "",
             userEmail: props.personEmail,
             userContact: "",
             title: "",
@@ -104,12 +107,42 @@ export default function ListingPage(props) {
         }
     );
 
+    const fromSubmitAPI = async () => {
+
+        const formInfo = {
+            ...formData,
+            toiletAttached: formData.isToiletAttached,
+            kitchenAvailable: formData.isKitchenAvailable,
+            imageList:[
+                {
+                    imagePath : formData.images.imagePath1,
+                },
+                {
+                    imagePath : formData.images.imagePath2,
+                },
+                {
+                    imagePath : formData.images.imagePath3,
+                }
+            ]
+        }
+        
+        await axios.post("http://localhost:8080/api/v1/roomPost/add", formInfo)
+            .then((response) => {
+                if( response.data.postIdHash === postID ){
+                    navigate('/')
+                }
+            });
+    }
+
     function onSubmit() {
-        props.IncreasePostCount();
+        if (formData.userContact === "" || formData.title === "" || formData.rent === null || formData.mapLink === "" || formData.address.house === "" || formData.address.street === "" || formData.address.city === "" || formData.images.imagePath1 === "" || formData.images.imagePath2 === "" || formData.images.imagePath3 === "" || formData.windowCount === null || formData.dimensions.length === null || formData.dimensions.width === null || formData.vacancy === null || formData.capacity === null || formData.keyFeatures === "" || formData.description === "" || formData.prefGender === "") {
+            setErrorMessage("*Please fill in all the fields");
+            return;
+        }
         setFormData(prevdata => {
             return {
                 ...prevdata,
-                postId: null,
+                postIdHash: data.postIdHash,
                 userEmail: props.personEmail,
                 userContact: data.userContact,
                 title: data.title,
@@ -140,7 +173,10 @@ export default function ListingPage(props) {
             }
         }
         )
-        navigate('/')
+
+
+        fromSubmitAPI();
+        // navigate('/')
     }
     return (
         <main className="listingMain">
