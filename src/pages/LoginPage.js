@@ -36,8 +36,6 @@ export default function LoginPage(props) {
     return (
         <main className="main">
             <Navbar {...props} />
-            {/* <h1>{JSON.stringify(post)}</h1> */}
-            {/* <button onClick={createPost}>Create Post</button> */}
             <LoginCard {...props} />
             <Footer />
         </main>

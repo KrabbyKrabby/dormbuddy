@@ -105,7 +105,7 @@ export default function ListingPage(props) {
 
 
     const fromSubmitAPI = () => {
-        axios.post("https://dormbuddy-production.up.railway.app/api/v1/roomPost/add", formData)
+        axios.post("https://dormbuddy.gentlesea-ae463244.eastus.azurecontainerapps.io/api/v1/roomPost/add", formData)
             .then((response) => {
                 if( response.data.postIdHash === postID ){
                     console.log(response);

@@ -15,11 +15,11 @@ function App() {
     {
       personEmail: "",
       navbarInfo: {
-        location: '',
+        location: "",
         rent: null,
-        size: null,
-        toilet: true,
-        kitchen: true,
+        roomArea: null,
+        toiletAttached: true,
+        kitchenAvailable: true,
       },
       currentDorm: {
         postIdHash:"",
@@ -83,11 +83,20 @@ function App() {
   }
 
   function Search(searchData){
+    const default_size = 0;
+    const default_rent = 99999999999;
+
     setData(
       prevdata => {
         return {
           ...prevdata,
-          navbarInfo: searchData,
+          navbarInfo:{
+            location: searchData.location,
+            rent: searchData.rent === null ? default_rent : searchData.rent,
+            roomArea: searchData.roomArea === null ? default_size : searchData.roomArea,
+            toiletAttached: searchData.toiletAttached,
+            kitchenAvailable: searchData.kitchenAvailable,
+          }
         }
       }
     )

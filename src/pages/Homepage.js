@@ -16,15 +16,13 @@ export default function Homepage(props) {
     const [featuredDorm, setFeaturedDorm] = React.useState([]);
 
     useEffect(() => {
-        axios.get("https://dormbuddy-production.up.railway.app/api/v1/roomPost/getFeatured")
+        axios.get("https://dormbuddy.gentlesea-ae463244.eastus.azurecontainerapps.io/api/v1/roomPost/getFeatured")
             .then((response) => {
                 setFeaturedDorm(response.data);
-                console.log(response.data);
             });
-      }, [])
+      },)
 
     const Cards = featuredDorm.map((dorm) => {
-        console.log(dorm);
         return (
             <DormCard 
                 item = {dorm}

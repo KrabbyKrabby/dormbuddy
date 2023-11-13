@@ -24,9 +24,8 @@ export default function LoginCard(props) {
             email: formData.email,
             password: formData.password,
         }
-        await axios.post("https://dormbuddy-production.up.railway.app/api/v1/auth/user/login", loginInfo)
+        await axios.post("https://dormbuddy.gentlesea-ae463244.eastus.azurecontainerapps.io/api/v1/auth/user/login", loginInfo)
             .then((response) => {
-                console.log(response.data);
                 if (response.data.id === -1) {
                     setErrorMessage("Incorrect email or password");
                     return;
