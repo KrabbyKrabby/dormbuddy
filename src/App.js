@@ -16,8 +16,8 @@ function App() {
       personEmail: "",
       navbarInfo: {
         location: "",
-        rent: null,
-        roomArea: null,
+        rent: "",
+        roomArea: "",
         toiletAttached: true,
         kitchenAvailable: true,
       },
@@ -45,8 +45,8 @@ function App() {
           }
         ],
         windowCount : null,
-        isToiletAttached : true,
-        isKitchenAvailable : true,
+        toiletAttached : true,
+        kitchenAvailable : true,
         dimension:{
             length:null,
             width:null,
@@ -83,8 +83,8 @@ function App() {
   }
 
   function Search(searchData){
-    const default_size = 0;
-    const default_rent = 99999999999;
+    const default_size = "0";
+    const default_rent = "999999999";
 
     setData(
       prevdata => {
@@ -92,8 +92,8 @@ function App() {
           ...prevdata,
           navbarInfo:{
             location: searchData.location,
-            rent: searchData.rent === null ? default_rent : searchData.rent,
-            roomArea: searchData.roomArea === null ? default_size : searchData.roomArea,
+            rent: searchData.rent === "" ? default_rent : searchData.rent,
+            roomArea: searchData.roomArea === "" ? default_size : searchData.roomArea,
             toiletAttached: searchData.toiletAttached,
             kitchenAvailable: searchData.kitchenAvailable,
           }

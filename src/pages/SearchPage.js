@@ -27,22 +27,12 @@ export default function SearchPage(props) {
           
           axios(config)
           .then(function (response) {
-            // console.log(JSON.stringify(response.data));
             setSearchedDorm(response.data);
           })
           .catch(function (error) {
             console.log(error);
           });
         }, [props.navbarInfo])
-
-    //     axios.get("https://dormbuddy.gentlesea-ae463244.eastus.azurecontainerapps.io/api/v1/search",props.navbarInfo)
-    //         .then((response) => {
-    //             setSearchedDorm(response.data);
-    //             console.log("response >>>>>>>>");
-    //             console.log(response.data);
-    //         });
-    //   }, [props.navbarInfo])
-
 
       const Cards = searchedDorms.map((dorm) => {
         console.log(dorm);

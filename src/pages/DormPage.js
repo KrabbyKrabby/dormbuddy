@@ -39,9 +39,9 @@ export default function DormPage(props) {
                             <img src={WindowLogo} alt="Window Logo" className="windowLogo"></img>
                             <h1 className='windowNo'>{props.currentDorm.windowCount}</h1>
                             <img src={KitchenLogo} alt="Kitchen Logo" className="kitchenLogo"></img>
-                            <h1 className='kitchenAvailable'>{props.currentDorm.isKitchenAvailable ? "Available" : "Not Available"}</h1>
+                            <h1 className='kitchenAvailable'>{props.currentDorm.kitchenAvailable ? "Available" : "Not Available"}</h1>
                             <img src={ToiletLogo} alt="Toilet Logo" className="toiletLogo"></img>
-                            <h1 className='toiletAvailable'>{props.currentDorm.isToiletAttached ? "Attached" : "Not Attached"}</h1>
+                            <h1 className='toiletAvailable'>{props.currentDorm.toiletAttached ? "Attached" : "Not Attached"}</h1>
                             <img src={SizeLogo} alt="Size Logo" className="sizeLogo"></img>
                             <h1 className='dorm-size'>{(props.currentDorm.dimension.length*props.currentDorm.dimension.width) + " Sq Ft"}</h1>
                         </div>

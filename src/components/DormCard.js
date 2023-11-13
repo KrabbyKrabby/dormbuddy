@@ -6,6 +6,7 @@ import SizeLogo from '../images/maximize.png'
 import CrossIcon from '../images/close.png'
 import './CSS/DormCard.css'
 import {useNavigate} from 'react-router-dom';
+import axios from 'axios'
 
 
 export default function(props){
@@ -18,17 +19,19 @@ export default function(props){
     }
 
     function handleCrossClick(){
-        //delete dorm
+        console.log(props.item.postIdHash)
+        axios.delete("https://dormbuddy.gentlesea-ae463244.eastus.azurecontainerapps.io/api/v1/roomPost/delete/13")
+        .then(() => this.setState({ status: 'Delete successful' }));
     }
 
     return(
-        <div className="dormCard" onClick={ handleClick }>
+        <div className="dormCard" >
             <div className='title-close'>
                 <h1 className="dormTitle">{props.item.title}</h1>
                 {props.showCross && <img src = {CrossIcon} onClick={ handleCrossClick } alt="Cross Icon" className="crossIcon"></img>} 
             </div>
             
-            <div className="innerCard">
+            <div className="innerCard" onClick={ handleClick }>
                 <img className='dormImage' src={props.item.imageList[0].imagePath}></img>
                 <div className="dormInfo">
                     <div className="dormCity">
@@ -45,9 +48,9 @@ export default function(props){
                         <img src={WindowLogo} alt="Window Logo" className="windowLogo"></img>
                         <h1 className='windowNo'>{props.item.windowCount}</h1>
                         <img src={KitchenLogo} alt="Kitchen Logo" className="kitchenLogo"></img>
-                        <h1 className='kitchenAvailable'>{props.item.isToiletAttached ? "Available" : "Not Available"}</h1>
+                        <h1 className='kitchenAvailable'>{props.item.toiletAttached ? "Available" : "Not Available"}</h1>
                         <img src={ToiletLogo} alt="Toilet Logo" className="toiletLogo"></img>
-                        <h1 className='toiletAvailable'>{props.item.isKitchenAvailable ? "Attached" : "Not Attached"}</h1>
+                        <h1 className='toiletAvailable'>{props.item.kitchenAvailable ? "Attached" : "Not Attached"}</h1>
                     </div>
                 </div>
             </div>
