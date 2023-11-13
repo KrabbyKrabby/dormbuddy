@@ -18,7 +18,7 @@ export default function SearchPage(props) {
         console.log(props.navbarInfo);
 
         var config = {
-            method: 'get',
+            method: 'post',
           maxBodyLength: Infinity,
             url: 'https://dormbuddy.gentlesea-ae463244.eastus.azurecontainerapps.io/api/v1/search',
             headers: { },
@@ -27,7 +27,8 @@ export default function SearchPage(props) {
           
           axios(config)
           .then(function (response) {
-            console.log(JSON.stringify(response.data));
+            // console.log(JSON.stringify(response.data));
+            setSearchedDorm(response.data);
           })
           .catch(function (error) {
             console.log(error);
@@ -59,7 +60,6 @@ export default function SearchPage(props) {
             <SearchBar
                 {...props}
             />
-            <h1>{JSON.stringify(props.navbarInfo)}</h1>
 
             <div className='cardContainer'>
                 {Cards}
