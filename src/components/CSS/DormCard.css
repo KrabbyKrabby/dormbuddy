@@ -1,0 +1,138 @@
+h1{
+    margin: 0px;
+  }
+
+    .dormCard{
+        width: 30%;
+        display: flex;
+        flex-direction: column;
+        margin: 2%;
+        border-radius: 5px;
+        background: rgba(0, 0, 0, 0.19);
+    }
+
+    .dormTitle{
+        color: #17514D;
+        font-size: 30px;
+        font-weight: 700;
+        margin-left: 5%;
+        margin-top: 4%;
+    }
+
+    .innerCard{
+        width: 90%;
+        height: 65%;
+        margin-top: 3%;
+        align-self: center;
+        display: flex;
+        flex-direction: row;
+    }
+
+    .dormImage{
+        width: 50%;
+        height: 100%;
+        border-radius: 5px;
+    }
+
+    .dormInfo{
+        width: 60%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .dormCity{
+        display: flex;
+        flex-direction: row;
+    }
+
+    .locationLogo{
+        width: 20px;
+        height: 20px;
+    }
+
+    .dormCityName{
+        color: #000;
+        font-size: 20px;
+        align-self :center;
+    }
+
+    .dormRent{
+        color: #17514D;
+        font-size: 40px;
+        margin-top: 3%;
+        margin-left: 3%;
+    }
+
+    .dormAddress{
+        color: #000;
+        font-size: 20px;
+        margin-top: 2%;
+        margin-left: 2%;
+        width: 80%;
+        height: 15%;
+    }
+
+    .dormAmenities{
+        display: flex;
+        flex-direction: row;
+        margin-top:4%;
+        align-items: center;
+    }
+
+    .windowLogo{
+        width: 25px;
+        height: 25px;
+        
+    }
+
+    .kitchenLogo{
+        width: 25px;
+        height: 25px;
+        margin-left: 3%;
+    }
+
+    .toiletLogo{
+        width: 25px;
+        height: 25px;
+        margin-left: 3%;
+    }
+
+    .sizeLogo{
+        width: 25px;
+        height: 25px;
+    }
+
+    .dormAmenities > h1{
+        font-size: 12px;
+    }
+
+    .squarefeet{
+        font-size: 20px;
+        margin-left: 2%;
+    }
+
+    .size{
+        display: flex;
+        flex-direction: row;
+        margin-top: 10%;
+    }
+
+    .title-close{
+        max-height: 15%;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+    }
+
+    .crossIcon{
+        margin-left: auto;
+    }
+
+
+
+
+
+
+
+

@@ -1,0 +1,88 @@
+h1{
+    margin: 0px;
+  }
+
+
+  .signupSignupCard{
+    width: 600px;
+    height: 800px;
+    display: flex;
+    flex-direction: column;
+    margin-top: 50px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .signupUpperCard{
+    width: 600px;
+    height: 700px;
+    border-radius: 100px 0px 0px 0px;
+    background: #E1CDCB;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+  }
+
+  .signupLowerCard{
+    width: 600px;
+    height: 100px;
+    border-radius: 0px 0px 100px 0px;
+    background: #919191;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .signupName{
+    display: flex;
+    flex-direction: row;
+  }
+
+
+
+  .signupTitle{
+    color: #000;
+    font-size: 40px;
+  }
+
+  input{
+    width: 450px;
+    height: 40px;
+    border-radius: 4px;
+    border: 1px solid #17514D;
+    background: #FFF;
+  }
+
+  .signupName > input{
+    width: 200px;
+    margin: 22px;
+  }
+
+  .signupRegisterButton{
+    width: 450px;
+    height: 40px;
+    border-radius: 4px;
+    border: 1px solid #17514D;
+    background: #17514D;
+    color: #F0DEDE;
+  }
+
+  .signupNotYetRegistered{
+    color: #F0DEDE;
+    font-size: 22px;
+  }
+
+  .signupLoginButton{
+    background: #919191;
+    color: #17514D;
+    font-weight: 800;
+    border: #919191;
+    font-size: 18px;
+  }
+
+  .errorMessage{
+    color: #c20f0f;
+    font-size: 18px;
+  }

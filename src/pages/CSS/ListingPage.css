@@ -1,0 +1,134 @@
+html{
+    height: 100%;
+  }
+    
+  h1{
+    margin: 0px;
+  }
+
+  .formPage{
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    height: auto;
+    background: rgba(0, 0, 0, 0.24);
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 3%;
+    align-items: center;
+  }
+
+  .formName{
+    align-self: center;
+    margin-top: 2%;
+  }
+
+  .formTitle{
+    width: 70%;
+  }
+
+  .dimension{
+    display: flex;
+    margin-top: 2%;
+    width: 70%;
+    justify-content: space-between;
+  }
+
+  .length{
+    width: 47%;
+  }
+  .width{
+    width: 46%;
+  }
+
+  .addressPlace{
+    display: flex;
+    width: 70%;
+    margin-top: 2%;
+    justify-content: space-between;
+  }
+
+  .addressPlace > input{
+    width: 30%;
+  }
+
+  .window-toilet-kitchen{
+    margin-top: 2%;
+    width: 70%;
+  }
+
+  .windowForm{
+    width: 30%;
+  }
+
+  .labelGender{
+    margin-left: 2%;
+  }
+
+  .prefGender{
+    margin-left: 2%;
+  }
+
+  .contact-vacancy-capacity-rent{
+    display: flex;
+    width: 70%;
+    margin-top: 2%;
+    justify-content: space-between;
+  }
+
+  .contact-vacancy-capacity-rent > input{
+    margin-top: 2%;
+    width: 23.5%;
+  }
+
+  .mapLinkForm{
+    width: 70%;
+    margin-top: 2%;
+  }
+
+  .keyFeaturesForm{
+    width: 70%;
+    margin-top: 2%;
+  }
+
+  .descriptionForm{
+    width: 70%;
+    margin-top: 2%;
+  }
+
+  .submitButton{
+    margin-top: 2%;
+    width: 10%;
+    height: 40px;
+    border-radius: 4px;
+    border: 1px solid #17514D;
+    background: #17514D;
+    color: #F0DEDE;
+  }
+
+  .lowerImageContainerListing{
+    width: 60%;
+    height: 60%;
+    margin-top: 2%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .lowerImageContainerListing > img{
+    height: 150px;
+    width: 150px;
+    margin: 2%;
+  }
+
+  .errorMessage{
+    color: #c20f0f;
+    font-size: 18px;
+  }
+  
+
+
+
+
+  

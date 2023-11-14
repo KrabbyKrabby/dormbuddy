@@ -1,0 +1,14 @@
+html{
+    height: 100%;
+  }
+    
+  h1{
+    margin: 0px;
+  }
+
+  .cardContainer{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-bottom: 600px;
+  }
