@@ -7,6 +7,7 @@ export default function LoginCard(props) {
     const navigate = useNavigate()
 
     const [formData, setFormData] = React.useState({ email: "", password: "" })
+    const [passwordStars, setPasswordStars] = React.useState("")
     const [errorMessage, setErrorMessage] = React.useState("");
 
     function handleChange(e) {
@@ -56,7 +57,7 @@ export default function LoginCard(props) {
                 <h1>Login</h1>
                 <h1 className='errorMessage'>{errorMessage}</h1>
                 <input type="text" placeholder="Email" className="emailInput" onChange={handleChange} name="email" value={formData.email}></input>
-                <input type="text" placeholder="Password" className="passwordInput" onChange={handleChange} name="password" value={formData.password}></input>
+                <input type="text" placeholder="Password" className="passwordInput" onChange={handleChange} name="password" value={  "*".repeat(formData.password.length)}></input>
                 <button className="forgotPassword">Forgot Password?</button>
                 <button className="loginButton" onClick={handleSubmit}>Login</button>
             </div>

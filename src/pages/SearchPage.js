@@ -17,12 +17,23 @@ export default function SearchPage(props) {
         console.log("navbar info >>>>>>");
         console.log(props.navbarInfo);
 
+        const default_size = "0";
+        const default_rent = "999999999";
+
+        const info = {
+            location: props.navbarInfo.location,
+            rent: props.navbarInfo.rent === "" ? default_rent : props.navbarInfo.rent,
+            roomArea: props.navbarInfo.roomArea === "" ? default_size : props.navbarInfo.roomArea,
+            toiletAttached: props.navbarInfo.toiletAttached,
+            kitchenAvailable: props.navbarInfo.kitchenAvailable,
+        }
+
         var config = {
             method: 'post',
           maxBodyLength: Infinity,
             url: 'https://dormbuddy.gentlesea-ae463244.eastus.azurecontainerapps.io/api/v1/search',
             headers: { },
-            data : props.navbarInfo
+            data : info
           };
           
           axios(config)

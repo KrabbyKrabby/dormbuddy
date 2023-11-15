@@ -13,26 +13,6 @@ export default function LoginPage(props) {
 
 
     const [post, setPost] = React.useState(null);
-
-    // React.useEffect(() => {
-    //     axios.get(getURL).then((response) => {
-    //         setPost(response.data);
-    //     })
-    //         .catch((err) => {
-    //             console.log(err);
-    //         })
-    // },[]);
-
-    // function createPost() {
-    //     axios.post(postURL, {
-    //         "email":"test",
-    //         "password":"test"
-    //     })
-    //         .then((response) => {
-    //             setPost(response.data);
-    //         });
-    // }
-
     return (
         <main className="main">
             <Navbar {...props} />

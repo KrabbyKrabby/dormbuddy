@@ -57,8 +57,8 @@ export default function SignupCard() {
                     <input type="text" placeholder="Last Name" className="signupLastNameInput" onChange={handleChange} name="lastName" value={formData.lastName}></input>
                 </div>
                 <input type="text" placeholder="Email" className="signupEmailInput" onChange={handleChange} name="email" value={formData.email}></input>
-                <input type="text" placeholder="Password" className="signupPasswordInput" onChange={handleChange} name="password" value={formData.password}></input>
-                <input type="text" placeholder="Confirm Password" className="signupConfirmPasswordInput" onChange={handleChange} name="confirmPassword" value={formData.confirmPassword}></input>
+                <input type="text" placeholder="Password" className="signupPasswordInput" onChange={handleChange} name="password" value={ "*".repeat(formData.password.length) }></input>
+                <input type="text" placeholder="Confirm Password" className="signupConfirmPasswordInput" onChange={handleChange} name="confirmPassword" value={ "*".repeat(formData.confirmPassword.length)}></input>
                 <button className="signupRegisterButton" onClick={handleSubmit}>Register</button>
             </div>
 

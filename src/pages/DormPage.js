@@ -10,8 +10,18 @@ import WindowLogo from '../images/window.png'
 import KitchenLogo from '../images/kitchen.png'
 import ToiletLogo from '../images/toilet.png'
 import SizeLogo from '../images/maximize.png'
+import React from 'react';
+import { useNavigate } from 'react-router-dom';
+import ImageViewer360 from '../components/ImageViewer360';
 
 export default function DormPage(props) {
+
+    const navigate = useNavigate()
+
+    function onSubmit(){
+        console.log("clicked");
+    }
+
     return (
         <main className="main">
             <Navbar {...props}/>
@@ -29,7 +39,7 @@ export default function DormPage(props) {
                                 <h1>{props.currentDorm.address.street}</h1>
                                 <h1>{props.currentDorm.address.city}</h1>
                             </div>
-                            <h1 className='google-maps-link'>{props.currentDorm.mapLink}</h1>
+                            <a href = {props.currentDorm.mapLink} rel='noopener' style={{cursor: 'pointer'}} className='google-maps-link'>{props.currentDorm.mapLink}</a>
                         </div>
                     </div>
                     <ImageViewer {...props}/>
@@ -52,12 +62,16 @@ export default function DormPage(props) {
                         
                     </div>
 
+                    <ImageViewer360 />
+
                     <div className='dormpage-dormDescription'>
                         <h1 className='key-features'>Key Features</h1>
                         <h1 className='key-feature-info'>{props.currentDorm.keyFeatures}</h1>
                         <h1 className='full-description'>Full Description</h1>
                         <h1 className='full-description-info'>{props.currentDorm.description}</h1>
                     </div>
+
+                    
 
                 </div>
 

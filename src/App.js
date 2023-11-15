@@ -92,8 +92,8 @@ function App() {
           ...prevdata,
           navbarInfo:{
             location: searchData.location,
-            rent: searchData.rent === "" ? default_rent : searchData.rent,
-            roomArea: searchData.roomArea === "" ? default_size : searchData.roomArea,
+            rent:  searchData.rent,
+            roomArea:  searchData.roomArea,
             toiletAttached: searchData.toiletAttached,
             kitchenAvailable: searchData.kitchenAvailable,
           }
@@ -165,7 +165,6 @@ function App() {
         SelectDorm = {SelectDorm}
         showCross = {true}  
       />}/>
-      
     </Routes>
   );
 }

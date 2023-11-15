@@ -5,33 +5,50 @@ import ToiletLogo from '../images/toilet.png'
 import SizeLogo from '../images/maximize.png'
 import CrossIcon from '../images/close.png'
 import './CSS/DormCard.css'
-import {useNavigate} from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import axios from 'axios'
+import { getStorage, ref, deleteObject } from "firebase/storage";
 
 
-export default function(props){
+
+export default function (props) {
 
     const navigate = useNavigate()
+    const storage = getStorage();
 
-    function handleClick(){
+    function handleClick() {
         props.SelectDorm(props.item)
         navigate('/dorm')
     }
 
-    function handleCrossClick(){
+    function handleCrossClick() {
+        console.log("cross clicked")
         console.log(props.item.postIdHash)
-        axios.delete("https://dormbuddy.gentlesea-ae463244.eastus.azurecontainerapps.io/api/v1/roomPost/delete/13")
-        .then(() => this.setState({ status: 'Delete successful' }));
+        axios.delete(`https://dormbuddy.gentlesea-ae463244.eastus.azurecontainerapps.io/api/v1/roomPost/delete?postIdHash=${props.item.postIdHash}`)
+            .then((response) => {
+                console.log("deleted")
+                console.log(response)
+
+                for( var i = 0; i < 3; i++ ){
+                    const desertRef = ref(storage, props.item.imageList[i].imagePath);
+                    deleteObject(desertRef).then(() => {
+                        console.log("deleted")
+                    }).catch((error) => {
+                          console.log(error)   
+                    });
+                }
+                props.setChecked(!props.checked)
+            });
     }
 
-    return(
+    return (
         <div className="dormCard" >
             <div className='title-close'>
                 <h1 className="dormTitle">{props.item.title}</h1>
-                {props.showCross && <img src = {CrossIcon} onClick={ handleCrossClick } alt="Cross Icon" className="crossIcon"></img>} 
+                {props.showCross && <img src={CrossIcon} onClick={handleCrossClick} alt="Cross Icon" className="crossIcon"></img>}
             </div>
-            
-            <div className="innerCard" onClick={ handleClick }>
+
+            <div className="innerCard" onClick={handleClick}>
                 <img className='dormImage' src={props.item.imageList[0].imagePath}></img>
                 <div className="dormInfo">
                     <div className="dormCity">
@@ -42,7 +59,7 @@ export default function(props){
                     <h1 className="dormAddress">{props.item.address.street}</h1>
                     <div className='size'>
                         <img src={SizeLogo} alt="sizeLogo" className="sizeLogo"></img>
-                        <h1 className='squarefeet'>{(props.item.dimension.length*props.item.dimension.width) + " Sq Ft"}</h1>
+                        <h1 className='squarefeet'>{(props.item.dimension.length * props.item.dimension.width) + " Sq Ft"}</h1>
                     </div>
                     <div className="dormAmenities">
                         <img src={WindowLogo} alt="Window Logo" className="windowLogo"></img>

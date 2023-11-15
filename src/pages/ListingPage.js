@@ -81,8 +81,9 @@ export default function ListingPage(props) {
     );
 
     const UploadImage = () => {
+        if( imageList.length >= 3 ) return;
         if (imageUpload === null) return;
-        const imageRef = ref(storage, `${postID}/${imageUpload.name}`);
+        const imageRef = ref(storage, `${postID}/${imageList.length}`);
         uploadBytes(imageRef, imageUpload).then((snapshot) => {
             getDownloadURL(snapshot.ref).then((url) => {
                 setImageList((prev) => [...prev, url]);
@@ -94,6 +95,7 @@ export default function ListingPage(props) {
 
     function handleChange(e) {
         const { name, value, type, checked } = e.target
+        if( name === "title" && value.length > 30 ) return;
         setData(prevState => {
             return {
                 ...prevState,
@@ -101,8 +103,6 @@ export default function ListingPage(props) {
             }
         })
     }
-
-
 
     const fromSubmitAPI = () => {
         axios.post("https://dormbuddy.gentlesea-ae463244.eastus.azurecontainerapps.io/api/v1/roomPost/add", formData)
@@ -207,7 +207,7 @@ export default function ListingPage(props) {
                     <input type="checkbox" className="kitchen" id="kitchen" name="isKitchenAvailable" onChange={handleChange} checked={data.isKitchenAvailable} />
                     <label htmlFor="kitchen">Kitchen?</label>
 
-                    <label className="labelGender" htmlFor="prefGender">?</label>
+                    <label className="labelGender" htmlFor="prefGender">Gender?</label>
                     <select id="prefGender" className="prefGender" value={data.prefGender} onChange={handleChange} name="prefGender">
                         <option value="Male">Male</option>
                         <option value="Female">Female</option>
