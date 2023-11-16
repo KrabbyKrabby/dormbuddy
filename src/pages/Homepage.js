@@ -41,7 +41,7 @@ export default function Homepage(props) {
                     <img src = {HomepageImage} alt = 'HomepageImage' className='homepageImage'/>
                 </div>
 
-                <h1 className='featured'>Featured Apartments</h1>
+                <h1 className='featured'>Featured Dorms</h1>
 
                 <div className='cardContainer'>
                     {Cards}

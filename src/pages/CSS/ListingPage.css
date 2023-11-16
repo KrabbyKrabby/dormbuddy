@@ -104,6 +104,7 @@ html{
     border: 1px solid #17514D;
     background: #17514D;
     color: #F0DEDE;
+    margin-bottom: 5%;
   }
 
   .lowerImageContainerListing{
@@ -136,6 +137,20 @@ html{
 
   .formHeader{
     font-size: 20px;
+  }
+
+  .imageUpload360{
+  }
+
+  .uploadTitle{
+    font-size: 20px;
+    margin-top: 2%;
+  }
+
+  .image360Preview{
+    width: 100px;
+    height: 100px;
+
   }
   
 

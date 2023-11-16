@@ -35,7 +35,7 @@ export default function DormPage(props) {
                         </div>
                         <div className='dormpage-address-link'>
                             <div className='dormpage-address'>
-                                <h1>{props.currentDorm.address.house}</h1>
+                                <h1>{`House: ${props.currentDorm.address.house}`}</h1>
                                 <h1>{props.currentDorm.address.street}</h1>
                                 <h1>{props.currentDorm.address.city}</h1>
                             </div>

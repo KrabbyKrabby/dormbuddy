@@ -8,8 +8,11 @@ import { ref, uploadBytes, listAll, getDownloadURL } from 'firebase/storage';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import { v4 } from 'uuid';
+import image360 from '../images/room360.jpg';
 
 export default function ListingPage(props) {
+
+    const [image360Uploaded, setImage360Uploaded] = React.useState(false);
 
     const navigate = useNavigate()
 
@@ -80,6 +83,10 @@ export default function ListingPage(props) {
         }
     );
 
+    function UploadImage360() {
+        setImage360Uploaded(true);
+    }
+
     const UploadImage = () => {
         if( imageList.length >= 3 ) return;
         if (imageUpload === null) return;
@@ -124,8 +131,8 @@ export default function ListingPage(props) {
             setErrorMessage("*Please fill in all the fields");
             return;
         }
-        if( imageList.length < 3 ){
-            setErrorMessage("*Please upload at least 3 images");
+        if( imageList.length < 3 || image360Uploaded == false ){
+            setErrorMessage("*Please upload all the required images");
             return;
         }
         
@@ -188,8 +195,8 @@ export default function ListingPage(props) {
 
 
                 <div className="dimension">
-                    <input className="length" placeholder="Length" onChange={handleChange} name="length" value={data.length} />
-                    <input className="width" placeholder="Width" onChange={handleChange} name="width" value={data.width} />
+                    <input className="length" placeholder="Length (Ft)" onChange={handleChange} name="length" value={data.length} />
+                    <input className="width" placeholder="Width (Ft)" onChange={handleChange} name="width" value={data.width} />
                 </div>
 
                 <div className="addressPlace">
@@ -234,10 +241,17 @@ export default function ListingPage(props) {
                         return <img src={url} alt="img" />
                     })}
                 </div>
-
+                
+                <h1 className="uploadTitle">Upload 3 regular images of your room</h1>
                 <input type="file" multiple accept="image/*" onChange={(event) => setImageUpload(event.target.files[0])} name="imagePath1" />
-
                 <button className="uploadButton" onClick={UploadImage} >Upload</button>
+
+                <h1 className="uploadTitle">Upload 1 3-Dimensional image of your room</h1>
+                <input className = "imageUpload360"type="file" multiple accept="image/*" onChange={(event) => setImageUpload(event.target.files[0])} name="imagePath1" />
+                {image360Uploaded && <img src = {image360} className="image360Preview"></img>}
+                <button className="uploadButton" onClick={ UploadImage360 } >Upload</button>
+                
+                
                 <button className="submitButton" onClick={onSubmit} >Submit</button>
             </div>
             <Footer />

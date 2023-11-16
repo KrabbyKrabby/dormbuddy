@@ -32,7 +32,7 @@ export default function BlackSearchBox(props) {
 
     return(
         <div className='blackSearchBox' onSubmit={handleSubmit}>
-            <h1 className='searchTitle'>Find The Apartment Of Your Taste</h1>
+            <h1 className='searchTitle'>Find A Place Of Your Taste</h1>
             <input type='text' placeholder='Location?' className='locationHomepage' onChange={handleChange} name="location" value={formData.location}/>
             <div className='searchContainer'>
                 <input type="text" className="rentHomepage" placeholder="Rent?" onChange={handleChange} name="rent" value={formData.rent}></input>
