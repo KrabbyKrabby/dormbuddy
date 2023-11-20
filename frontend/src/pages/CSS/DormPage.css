@@ -1,0 +1,244 @@
+html{
+    height: 100%;
+  }
+    
+  h1{
+    margin: 0px;
+  }
+
+  .dorm-page{
+    display: flex;
+    flex-direction: row;
+    margin-top: 5%;
+  }
+
+  .dorm-page-left{
+    display: flex;
+    flex-direction: column;
+    width: 75%;
+    align-items: center;
+  }
+
+  .dorm-page-right{
+    width: 25%;
+    height: 800px;
+  }
+
+  .contact-card{
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    height: 100%;
+    background: #17514D;
+    margin-left: auto;
+    margin-right: auto;
+    align-items: center;
+  }
+
+  .contact-agent{
+    color: #F0DEDE;
+    font-size: 45px;
+    font-style: normal;
+    font-weight: 700;
+    margin-top: 20%;
+  }
+
+  .contact-info{
+    display: flex;
+    flex-direction: row;
+    width: 80%;
+    height: 7%;
+    background: #F0DEDE;
+    margin-top: 20%;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .email-info{
+    display: flex;
+    flex-direction: row;
+    margin-top: 10%;
+    width: 80%;
+    height: 7%;
+    background: #F0DEDE;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .safety-tips{
+    color: #F0DEDE;
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 500;
+    margin-top: 20%;
+  }
+
+  .safety-tip-info{
+    width: 80%;
+    color: #F0DEDE;
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 500;
+    margin-top: 5%;
+  }
+
+  .phone-number{
+    font-size: 20px;
+  }
+
+  .email{
+    font-size: 15px;
+  }
+
+  .dorm-page-upper{
+    display: flex;
+    flex-direction: column;
+    width: 75%;
+    height: 160px;
+    background: rgba(0, 0, 0, 0.24);
+    margin-bottom: 3%;
+  }
+
+  .dormpage-title{
+    width: 60%;
+    font-size: 35px;
+    margin-left: 2%;
+  }
+
+  .dormpage-address-link{
+    display: flex;
+    flex-direction: row;
+    margin-top: auto;
+    margin-left: 2%;
+  }
+
+  .google-maps-link{
+    color: #17514D;
+    font-size: 30px;
+    font-style: normal;
+    font-weight: 400;
+    text-decoration-line: underline;
+    align-self: last baseline;
+    margin-left: auto;
+    margin-right: 1%;
+    margin-bottom: 1%;
+  }
+
+  .dormpage-rent{
+    font-size: 50px;
+    margin-left: auto;
+    margin-right: 2%;
+  }
+
+  .dormpage-dormAmenities{
+    display: flex;
+    flex-direction: column;
+    width: 69%;
+    height: 120px;
+    background: rgba(0, 0, 0, 0.24);
+    margin-left: 1%;
+    margin-top: 2%;
+    justify-content: center;
+    align-items: center;
+  }
+  .sizeLogo{
+    margin-left: 2%;
+  }
+
+  .dormpage-dormDescription{
+    display: flex;
+    flex-direction: column;
+    width: 69%;
+    height: 600px;
+    background: rgba(0, 0, 0, 0.24);
+    margin-left: 1%;
+    margin-top: 5%;
+  }
+
+  .key-features{
+    color: #000;
+    font-family: Inter;
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    margin-left: 5%;
+    margin-top: 5%;
+  }
+
+  .full-description{
+    color: #000;
+    font-family: Inter;
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    margin-left: 5%;
+    margin-top: 5%;
+  }
+
+  .key-feature-info{
+    color: #000;
+    font-family: Inter;
+    font-size: 29px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 150.023%; /* 43.507px */
+    margin-left: 5%;
+  }
+
+  .full-description-info{
+    color: #000;
+    font-family: Inter;
+    font-size: 29px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 150.023%; /* 43.507px */
+    margin-left: 5%;
+  }
+
+  .dormpage-title-rent{
+    display: flex;
+    flex-direction: row;
+  }
+
+  .dormpage-address{
+    font-size: 20px;
+  }
+
+  .dormpage-amenities-top{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 50%;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .dormpage-amenities-bottom{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 50%;
+    justify-content: center;
+    align-items: center;
+
+  }
+
+  .vacancy{
+    margin-right: 3%;
+  }
+
+  .dormpage-address{
+    display: flex;
+    flex-direction: column;
+  }
+
+  .dormpage-address > h1{
+    font-size: 25px;
+  }
+
+  .dormpage-address{
+    margin-bottom: 1%;
+  }
+

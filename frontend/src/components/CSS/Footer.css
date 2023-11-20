@@ -1,0 +1,101 @@
+
+    
+  h1{
+    margin: 0px;
+  }
+
+  .footer{
+    left:0;
+    bottom:0;
+    right:0;
+    width: 100%;
+    height: auto;
+    background: #17514D;
+    display: flexbox;
+  }
+
+  .upperContainer{
+    height: 200px;
+    display: flex;
+    flex-direction: row;
+  }
+
+  .lowerContainer{
+    height: 50px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .leftContainer{
+    width: 33%;
+    padding-left: 20px;
+    padding-top: 50px;
+  }
+  .centerContainer{
+    width: 33%;
+  }
+
+  .cities{
+    color: #F0DEDE;
+    font-size: 30px;
+    margin-left: 100px;
+    margin-top: 40px;
+  }
+
+  .centerContainer > h1{
+    color: #F0DEDE;
+    font-size: 15px;
+    margin-left: 100px;
+    margin-top: 5px;
+  }
+
+  .rightContainer{
+    width: 33%;
+    padding-left: 50px;
+  }
+
+  .links{
+    margin-left: auto;
+  }
+
+  img{
+    width: 30px;
+    height: 30px;
+    margin-right: 10px;
+  }
+
+  .rights{
+    font-style: normal;
+    color: #FFF;
+    margin-left: 10px;
+    font-size: 15px;
+  }
+
+  .dormBuddy{
+    color: #F0DEDE;
+    font-size: 40px;
+    width: 50px;
+  }
+
+  .address{
+    color: #F0DEDE;
+    font-size: 15px;
+    margin-top: 20px;
+  }
+
+  .company{
+    color: #F0DEDE;
+    font-size: 30px;
+    margin-left: 100px;
+    margin-top: 40px;
+  }
+
+  .rightContainer > h1{
+    color: #F0DEDE;
+    font-size: 15px;
+    margin-left: 100px;
+    margin-top: 5px;
+  }
+
+

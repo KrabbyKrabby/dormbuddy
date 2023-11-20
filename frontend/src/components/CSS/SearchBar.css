@@ -1,0 +1,60 @@
+html{
+    height: 100%;
+  }
+
+  .searchBar{
+    display: flex;
+    flex-direction: row;
+    height: 64px;
+    width : 100%;
+    box-shadow: 0 2px 6px 0 rgba(0,0,0,.2);
+    align-items: center;
+  }
+
+  .location{
+    width: 20%;
+    margin-left: 3%;
+    border-color: #F0DEDE;
+  }
+
+  .rent{
+    width: 15%;
+    margin-left: 2%;
+    border-color: #F0DEDE;
+  }
+  
+  .sizeSearchbar{
+    width: 15%;
+    border-color: #F0DEDE;
+  }
+
+  .categorychecklist li {
+    display: inline-block;
+}
+
+  .toilet{
+    width: auto;
+    height: auto;
+    margin-left: 3%;
+  }
+  
+  .kitchen{
+    width: auto;
+    height: auto;
+    margin-left: 5%;
+  }
+
+  .filterButton{
+    background: #17514D;
+    border-radius: 9px;
+    border: 1px solid #F0DEDE;
+    width: 110px;
+    margin-right: 30px;
+    color: #F0DEDE;
+    margin-left: auto;
+  }
+
+ 
+
+
+  

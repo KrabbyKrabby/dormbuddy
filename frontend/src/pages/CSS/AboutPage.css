@@ -1,0 +1,15 @@
+html{
+    height: 100%;
+  }
+    
+  h1{
+    margin: 0px;
+  }
+
+  .profileContainer{
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 600px;
+    margin-top: 1%;
+    justify-content: center;
+  }
