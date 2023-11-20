@@ -1,4 +1,5 @@
 import Navbar from "../components/Navbar";
+import Footer from "../components/Footer";
 import "./CSS/MyDormPage.css";
 import DormData from '../DormData';
 import DormCard from '../components/DormCard';
@@ -37,7 +38,7 @@ export default function MyDormPage(props)
             <div className="MyDormCards">
                 {Cards}
             </div>
-
+            <Footer />
         </main>
     );
 }

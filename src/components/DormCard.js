@@ -42,7 +42,7 @@ export default function (props) {
     }
 
     return (
-        <div className="dormCard" >
+        <div className="dormCard"  >
             <div className='title-close'>
                 <h1 className="dormTitle">{props.item.title}</h1>
                 {props.showCross && <img src={CrossIcon} onClick={handleCrossClick} alt="Cross Icon" className="crossIcon"></img>}

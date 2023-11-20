@@ -8,6 +8,7 @@ import SearchPage from './pages/SearchPage';
 import DormPage from './pages/DormPage';
 import ListingPage from './pages/ListingPage';
 import MyDormPage from './pages/MyDormPage';
+import AboutPage from './pages/AboutPage';
 
 function App() {
 
@@ -159,6 +160,13 @@ function App() {
         showCross = {false}   
       />}/>
       <Route path="/dormlist" element={<MyDormPage
+        {...data}
+        Login = {Login}
+        Search = {Search}
+        SelectDorm = {SelectDorm}
+        showCross = {true}  
+      />}/>
+      <Route path="/aboutus" element={<AboutPage
         {...data}
         Login = {Login}
         Search = {Search}

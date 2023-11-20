@@ -21,4 +21,5 @@ html{
     flex-direction: row;
     flex-wrap: wrap;
     margin-top: 2%;
+    margin-bottom: 600px;
   }
